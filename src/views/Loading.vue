@@ -26,6 +26,10 @@ export default {
         {
           value: 'lisi',
           index: 2
+        },
+        {
+          value: 'wangwu',
+          index: 3
         }
       ]
     })
