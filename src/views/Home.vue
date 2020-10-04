@@ -1,18 +1,74 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <div class="top-img">
+      <img src="../assets/img/icon/school-icon.png" alt="school-icon">
+      <img src="../assets/img/icon/dang-icon.png" alt="dang-icon">
+      <img src="../assets/img/icon/redrock-icon.png" alt="redrock-icon">
+    </div>
+
+    <div class="start-btn">
+      <img src="../assets/img/home/main-btn-info.png" alt="main-btn-info">
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { reactive, toRefs } from '@vue/reactivity'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+  },
+  setup () {
+    const state = reactive({
+
+    })
+    return {
+      ...toRefs(state)
+    }
   }
 }
 </script>
+
+<style lang="less" scoped>
+  #home{
+    height: 100vh;
+    background-image: url("../assets/img/home/background.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .top-img {
+    img {
+      position: absolute;
+      top: 34px;
+      width: 52px;
+    }
+    img:nth-child(1) {
+      left: 37px;
+    }
+    img:nth-child(2) {
+      left: 111px;
+    }
+    img:nth-child(3) {
+      left: 183px;
+    }
+  }
+  .start-btn {
+    position: absolute;
+    bottom: 238px;
+    left: 199px;
+    width: 366px;
+    height: 133px;
+    background-image: url("../assets/img/home/main-btn.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    img {
+      position: absolute;
+      left: 78px;
+      top: 38px;
+      width: 212px;
+    }
+  }
+</style>
