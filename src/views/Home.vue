@@ -6,9 +6,7 @@
       <img src="../assets/img/icon/redrock-icon.png" alt="redrock-icon">
     </div>
 
-    <div class="start-btn">
-      <img src="../assets/img/home/main-btn-info.png" alt="main-btn-info">
-    </div>
+    <div class="start-btn"></div>
   </div>
 </template>
 
@@ -32,6 +30,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  @btn-l: 50vh;
   #home{
     height: 100vh;
     background-image: url("../assets/img/home/background.png");
@@ -57,18 +56,19 @@ export default {
   }
   .start-btn {
     position: absolute;
-    bottom: 238px;
+    bottom: @btn-l;
+    transform: translate(0, 370px);
     left: 199px;
     width: 366px;
     height: 133px;
     background-image: url("../assets/img/home/main-btn.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    img {
-      position: absolute;
-      left: 78px;
-      top: 38px;
-      width: 212px;
-    }
+    /*img {*/
+    /*  position: absolute;*/
+    /*  left: 78px;*/
+    /*  top: 38px;*/
+    /*  width: 212px;*/
+    /*}*/
   }
 </style>
