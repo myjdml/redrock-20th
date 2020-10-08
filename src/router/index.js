@@ -11,6 +11,16 @@ const routes = [
     path: '/loading',
     name: 'Loading',
     component: () => import('../views/Loading')
+  },
+  {
+    path: '/game',
+    name: 'Game',
+    component: () => import('../views/Game')
+  },
+  {
+    path: '/text',
+    name: 'Text',
+    component: () => import('../components/Text')
   }
 ]
 

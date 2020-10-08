@@ -1,12 +1,6 @@
 <template>
   <div id="home">
-    <div class="top-img">
-      <img src="../assets/img/icon/school-icon.png" alt="school-icon">
-      <img src="../assets/img/icon/dang-icon.png" alt="dang-icon">
-      <img src="../assets/img/icon/redrock-icon.png" alt="redrock-icon">
-    </div>
-
-    <div class="start-btn"></div>
+    <div class="start-btn" @click="Start"></div>
   </div>
 </template>
 
@@ -22,8 +16,12 @@ export default {
     const state = reactive({
 
     })
+    const Start = () => {
+      alert('游戏开始')
+    }
     return {
-      ...toRefs(state)
+      ...toRefs(state),
+      Start
     }
   }
 }
@@ -38,22 +36,6 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
   }
-  .top-img {
-    img {
-      position: absolute;
-      top: 34px;
-      width: 52px;
-    }
-    img:nth-child(1) {
-      left: 37px;
-    }
-    img:nth-child(2) {
-      left: 111px;
-    }
-    img:nth-child(3) {
-      left: 183px;
-    }
-  }
   .start-btn {
     position: absolute;
     bottom: @btn-l;
@@ -64,6 +46,7 @@ export default {
     background-image: url("../assets/img/home/main-btn.png");
     background-size: 100%;
     background-repeat: no-repeat;
+    cursor: pointer;
     /*img {*/
     /*  position: absolute;*/
     /*  left: 78px;*/
