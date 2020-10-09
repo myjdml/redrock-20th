@@ -22,7 +22,7 @@ export default {
 
 <style lang="less" scoped>
   #app {
-    font-family: Coder,serif;
+    /*font-family: Coder,serif;*/
   }
   .top-img {
     img {
