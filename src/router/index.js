@@ -13,6 +13,11 @@ const routes = [
     component: () => import('../views/Loading')
   },
   {
+    path: '/qr-code',
+    name: 'QRCode',
+    component: () => import('../views/QRCode')
+  },
+  {
     path: '/game',
     name: 'Game',
     component: () => import('../views/Game')

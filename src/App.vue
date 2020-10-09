@@ -29,6 +29,7 @@ export default {
       position: absolute;
       top: 34px;
       width: 52px;
+      z-index: 3;
     }
     img:nth-child(1) {
       left: 37px;
