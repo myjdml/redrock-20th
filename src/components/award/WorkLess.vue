@@ -1,11 +1,8 @@
 <template>
-  <div id="worked" class="flex-cul">
+  <div id="work-less" class="flex-cul">
     <MyInput :my-name="'姓名'" :placeholder="'张三'"></MyInput>
-    <MyInput :my-name="'电话'" :placeholder="'182****1663'"></MyInput>
-    <MyInput :my-name="'届数'" :placeholder="'18'"></MyInput>
-    <MyInput :my-name="'职位'" :placeholder="'web研发部 干事'"></MyInput>
-    <MyInput :my-name="'邮寄地址'" :placeholder="'重邮**省**小区邮寄点'"></MyInput>
-    <div style="height: 10px"></div>
+    <MyInput :my-name="'学号'" :placeholder="'2019***211'"></MyInput>
+    <MyInput :my-name="'联系电话'" :placeholder="'182****1663'"></MyInput>
 
     <div class="confirm"></div>
   </div>
@@ -14,7 +11,7 @@
 <script>
 import MyInput from './MyInput'
 export default {
-  name: 'Worked',
+  name: 'WorkLess',
   components: {
     MyInput
   }
@@ -22,7 +19,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  #worked {
+  #work-less {
     width: 100%;
     height: 100%;
   }
@@ -34,7 +31,7 @@ export default {
   }
   .confirm {
     position: absolute;
-    bottom: 3px;
+    bottom: 63px;
     width: 220px;
     height: 101px;
     background-image: url("../../assets/img/components/award/confirm.png");

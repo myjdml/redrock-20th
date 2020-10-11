@@ -1,6 +1,9 @@
 <template>
   <div id="game">
-    alalal
+    <div class="bac1"></div>
+    <div class="bac2"></div>
+    <div class="bac3"></div>
+    <div class="bac4"></div>
   </div>
 </template>
 
@@ -21,7 +24,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
- #game {
-
- }
+  #game {
+    width: 100vw;
+    height: 2000px;
+  }
+  .bac1 {
+    height: 1200px;
+    background-image: url("../assets/img/game/bac1.png");
+    background-size: 100%;
+  }
+  .bac2 {
+    height: 1200px;
+    background-image: url("../assets/img/game/bac2.png");
+    background-size: 100%;
+  }
 </style>

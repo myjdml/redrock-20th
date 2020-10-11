@@ -2,7 +2,7 @@
   <div id="first-pick" class="flex-cul">
     <div class="pick" @click="showWorked">我曾在网校工作过</div>
     <div style="height: 38px"></div>
-    <div class="pick">我正在/未曾在网校工作过</div>
+    <div class="pick" @click="showWorkLess">我正在/未曾在网校工作过</div>
   </div>
 </template>
 
@@ -14,6 +14,9 @@ export default {
   methods: {
     showWorked () {
       this.$emit('show-worked-state')
+    },
+    showWorkLess () {
+      this.$emit('show-work-less-state')
     }
   }
 }

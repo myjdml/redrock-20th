@@ -1,24 +1,27 @@
 <template>
     <div id="input">
-      <div class="title">报名</div>
-      <input type="text" placeholder="张三"/>
+      <div class="title">{{myName}}</div>
+      <input type="text" :placeholder="placeholder">
     </div>
 </template>
 
 <script>
 export default {
-  name: 'MyInput'
+  name: 'MyInput',
+  props: {
+    myName: String,
+    placeholder: String
+  }
 }
 </script>
 
 <style lang="less" scoped>
   #input {
     display: inline-block;
-    margin-top: 200px;
     font-family: Coder,serif;
   }
   .title {
-    width: 63px;
+    /*width: 63px;*/
     height: 55px;
     font-size: 30px;
     font-weight: 400;

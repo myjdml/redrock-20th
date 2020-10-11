@@ -6,8 +6,13 @@
         <div v-if="control.cancel" class="cancel"></div>
       </div>
 
-      <FirstPick v-if="control.first_pick" @show-worked-state="showWorkedState"></FirstPick>
+      <FirstPick
+        v-if="control.first_pick"
+        @show-worked-state="showWorkedState"
+        @show-work-less-state="showWorkLessState">
+      </FirstPick>
       <Worked v-if="control.worked"></Worked>
+      <WorkLess v-if="control.work_less"></WorkLess>
     </div>
   </div>
 </template>
@@ -16,10 +21,12 @@
 import FirstPick from './award/FirstPick'
 import { reactive, toRefs } from '@vue/reactivity'
 import Worked from './award/Worked'
+import WorkLess from './award/WorkLess'
 
 export default {
   name: 'Award',
   components: {
+    WorkLess,
     Worked,
     FirstPick
   },
@@ -28,6 +35,7 @@ export default {
       control: {
         first_pick: true,
         worked: false,
+        work_less: false,
         back: false,
         cancel: true
       }
@@ -47,9 +55,15 @@ export default {
       this.control.back = !this.control.back
       // this.$emit('closeAwardState', false)
     },
+    showWorkLessState () {
+      this.control.first_pick = !this.control.first_pick
+      this.control.work_less = !this.control.work_less
+      this.control.back = !this.control.back
+    },
     Back () {
       this.control.first_pick = !this.control.first_pick
       this.control.worked = false
+      this.control.work_less = false
       this.control.back = !this.control.back
     }
   }
@@ -69,8 +83,8 @@ export default {
     position: absolute;
     top: 13.5vh;
     left: 10vw;
-    width: 80vw;
-    height: 73vh;
+    width: 78vw;
+    height: 116vw;
     background-image: url("../assets/img/components/award/main-bac.png");
     background-size: 100%;
     .back {
