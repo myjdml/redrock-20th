@@ -65,21 +65,6 @@ export default {
     }
   },
   mounted () {
-    console.log(window)
-    console.log(window.DeviceMotionEvent)
-    if (window.DeviceMotionEvent) {
-      console.log('asas')
-      window.addEventListener('devicemotion', function (ev) {
-        // 当触发devicemotion事件后查看相关信息
-        const acc = ev.accelerationIncludingGravity
-        alert('x坐标:' + acc.x + '--y坐标:' + acc.y + '---z坐标:' + acc.z)
-      }, false)
-    }
-
-    const w = window.innerWidth
-    // const h = window.innerHeight
-    // let ratio = this.getDevicePixelRatio();
-    // console.log(ratio);
 
     const Engine = Matter.Engine
     const Render = Matter.Render
@@ -177,7 +162,7 @@ export default {
     })
     World.add(world, [stack, circle])
 
-    // this.getGrant()
+    this.getGrant()
     // this.start(engine.world.gravity)
     this.start(engine.world.gravity)
   }
