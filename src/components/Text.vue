@@ -65,6 +65,10 @@ export default {
     }
   },
   mounted () {
+    const w = window.innerWidth
+    // const h = window.innerHeight
+    // let ratio = this.getDevicePixelRatio();
+    // console.log(ratio);
 
     const Engine = Matter.Engine
     const Render = Matter.Render
