@@ -1,7 +1,6 @@
 <template>
   <div id="text">
     <div class="main"></div>
-    <div id="tip">szsss</div>
   </div>
 </template>
 
@@ -99,7 +98,7 @@ export default {
     // 挂载引擎
     // 生成墙壁
     World.add(engine.world, [
-      Bodies.rectangle(0, 0, 750, 1, {
+      Bodies.rectangle(0, 0, 750 * w / 375, 1, {
         isStatic: true,
         render: {
           fillStyle: 'rgba(255, 255, 255, 0)',
@@ -113,14 +112,14 @@ export default {
           strokeStyle: 'rgba(255, 255, 255, 0)'
         }
       }),
-      Bodies.rectangle(0, 1000, 750, 1, {
+      Bodies.rectangle(0, 1000, 750 * w / 375, 1, {
         isStatic: true,
         render: {
           fillStyle: 'rgba(255, 255, 255, 0)',
           strokeStyle: 'rgba(255, 255, 255, 0)'
         }
       }),
-      Bodies.rectangle(375, 0, 1, 2000, {
+      Bodies.rectangle(375 * w / 375, 0, 1, 2000, {
         isStatic: true,
         render: {
           fillStyle: 'rgba(255, 255, 255, 0)',

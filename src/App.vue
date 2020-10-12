@@ -5,7 +5,11 @@
       <img src="./assets/img/icon/dang-icon.png" alt="dang-icon">
       <img src="./assets/img/icon/redrock-icon.png" alt="redrock-icon">
     </div>
-    <router-view/>
+    <transition :name="pageChange">
+      <keep-alive>
+        <router-view @checkoutPage="handleCheckoutPage"></router-view>
+      </keep-alive>
+    </transition>
     <Player></Player>
   </div>
 </template>
@@ -16,6 +20,20 @@ export default {
   name: 'App',
   components: {
     Player
+  },
+  data () {
+    return {
+      pageChange: 'next'
+    }
+  },
+  methods: {
+    handleCheckoutPage () {
+      this.pageChange = 'next'
+
+      setTimeout(() => {
+        this.pageChange = 'prev'
+      }, 400)
+    }
   }
 }
 </script>
@@ -40,5 +58,28 @@ export default {
     img:nth-child(3) {
       left: 183px;
     }
+  }
+  .prev-enter,
+  .next-leave-to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  .prev-leave-to,
+  .next-enter {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  .next-enter-to,
+  .next-leave,
+  .prev-enter-to,
+  .prev-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .next-enter-active,
+  .next-leave-active,
+  .prev-enter-active,
+  .prev-leave-active {
+    transition: all 1s;
   }
 </style>
