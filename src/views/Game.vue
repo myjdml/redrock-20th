@@ -279,7 +279,7 @@ export default {
       return Bodies.circle(
         375 / 2,
         100,
-        15,
+        12,
         {
           friction: 0.1,
           restitution: 0.2,
