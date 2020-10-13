@@ -294,7 +294,7 @@ export default {
     console.log(circle.bodies[0].position)
     World.add(world, [circle])
 
-    this.getGrant()
+    // this.getGrant()
     // this.start(engine.world.gravity)
     this.start(engine.world.gravity)
   }
