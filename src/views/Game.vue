@@ -17,6 +17,7 @@
     <div class="bac2-icon2"></div>
     <div class="bac2-icon3"></div>
   </div>
+  <TextShow class="font"></TextShow>
 
   <div id="cover"></div>
 </template>
@@ -25,9 +26,13 @@
 import { reactive, toRefs } from '@vue/reactivity'
 import Orienter from '../utils/orienter'
 import Matter from 'matter-js'
+import TextShow from '../components/game/TextShow'
 
 export default {
   name: 'Game',
+  components: {
+    TextShow
+  },
   setup () {
     const state = reactive({
       controlX: {},
@@ -254,6 +259,220 @@ export default {
           fillStyle: 'rgba(255, 255, 255, 1)',
           strokeStyle: 'rgba(255, 255, 255, 1)'
         }
+      }),
+      Bodies.rectangle(210 * p, 484 * p, 2, 40 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 0, 0, 1)',
+          strokeStyle: 'rgba(255, 0, 0, 1)'
+        }
+      }),
+      Bodies.rectangle(30 * p, 680 * p, 90 * p, 2, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      // 第二页的管子
+      Bodies.trapezoid(195 * p, 738 * p, -13 * p, 40 * p, 3, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.trapezoid(128 * p, 738 * p, 13 * p, 40 * p, 3, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(145 * p, 768 * p, 10 * p, 35 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(180 * p, 782 * p, 5 * p, 60 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(160 * p, 812 * p, 40 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(18 * p, 892 * p, 50 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(103 * p, 892 * p, 60 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(45 * p, 930 * p, 2 * p, 60 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(70 * p, 905 * p, 2 * p, 20 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(65 * p, 945 * p, 45 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(95 * p, 915 * p, 45 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(110 * p, 925 * p, 2 * p, 20 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(85 * p, 955 * p, 2 * p, 20 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(215 * p, 965 * p, 260 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(245 * p, 935 * p, 260 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(345 * p, 1010 * p, 2 * p, 95 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(325 * p, 1090 * p, 200 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(285 * p, 1060 * p, 120 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      // 第二页的管子
+      Bodies.rectangle(165 * p, 1190 * p, 320 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(285 * p, 1295 * p, 170 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(125 * p, 1490 * p, 260 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      // 第三页的管子
+      Bodies.rectangle(250 * p, 1652 * p, 250 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(120 * p, 1625 * p, 50 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(95 * p, 1655 * p, 2 * p, 50 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(125 * p, 1667 * p, 2 * p, 30 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      // 第三页的管子
+      Bodies.rectangle(215 * p, 1770 * p, 2 * p, 30 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(105 * p, 1755 * p, 200 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(255 * p, 1785 * p, 90 * p, 2 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
       })
     ])
     // 生成正方体
@@ -369,21 +588,25 @@ export default {
   }
   .bac2-icon1 {
     position: absolute;
-    top: 1165 + 154px;
-    left: 177px;
-    width: 300px;
-    height: 147px;
+    top: 1430px;
+    left: 237px;
+    width: 171px;
+    height: 198px;
     background-image: url("../assets/img/game/bac2-icon1.png");
     background-size: 100%;
   }
   .bac2-icon2 {
     position: absolute;
-    top: 1040px;
-    left: 625px;
-    width: 125px;
-    height: 62px;
-    background-image: url("../assets/img/game/bac1-icon3.png");
+    top: 1454px;
+    left: 67px;
+    width: 690px;
+    height: 736px;
+    background-image: url("../assets/img/game/bac2-icon2.png");
     background-size: 100%;
   }
 
+  .font {
+    position: absolute;
+    top: 3700px;
+  }
 </style>
