@@ -30,7 +30,8 @@ export default {
   name: 'Game',
   setup () {
     const state = reactive({
-
+      controlX: {},
+      orienter: {}
     })
     return {
       ...toRefs(state)
