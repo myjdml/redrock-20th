@@ -537,7 +537,7 @@ export default {
       }
       console.log(main.scrollTop)
       console.log(window.scrollY, target.y)
-      if (target.y > 1660) {
+      if (target.y > 1850) {
         this.fontState = true
       }
     })
