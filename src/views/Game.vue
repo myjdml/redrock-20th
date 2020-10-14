@@ -1,25 +1,27 @@
 <template>
-  <div id="game">
-    <div class="bac1"></div>
-    <div class="bac2"></div>
-    <div class="bac3"></div>
-    <div class="bac4"></div>
-    <div class="tip"></div>
-  </div>
+  <div id="main">
+    <div id="game">
+      <div class="bac1"></div>
+      <div class="bac2"></div>
+      <div class="bac3"></div>
+      <div class="bac4"></div>
+      <div class="tip"></div>
 
-  <div>
-    <div class="bac1-icon1"></div>
-    <div class="bac1-icon2"></div>
-    <div class="bac1-icon3"></div>
-  </div>
-  <div>
-    <div class="bac2-icon1"></div>
-    <div class="bac2-icon2"></div>
-    <div class="bac2-icon3"></div>
-  </div>
-  <TextShow class="font"></TextShow>
+      <div>
+        <div class="bac1-icon1"></div>
+        <div class="bac1-icon2"></div>
+        <div class="bac1-icon3"></div>
+      </div>
+      <div>
+        <div class="bac2-icon1"></div>
+        <div class="bac2-icon2"></div>
+        <div class="bac2-icon3"></div>
+      </div>
+      <TextShow class="font"></TextShow>
 
-  <div id="cover"></div>
+      <div id="cover"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -136,13 +138,13 @@ export default {
           strokeStyle: 'rgba(255, 255, 255, 0)'
         }
       }),
-      Bodies.rectangle(0, 2235 * p, 750 * p, 3, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
+      // Bodies.rectangle(0, 2235 * p, 750 * p, 3, {
+      //   isStatic: true,
+      //   render: {
+      //     fillStyle: 'rgba(255, 255, 255, 1)',
+      //     strokeStyle: 'rgba(255, 255, 255, 1)'
+      //   }
+      // }),
       Bodies.rectangle(375 * p, 0, 1, 4470 * p, {
         isStatic: true,
         render: {
@@ -517,12 +519,39 @@ export default {
     // this.getGrant()
     // this.start(engine.world.gravity)
     this.start(engine.world.gravity)
+
+    // 禁止划动事件
+    document.addEventListener('touchmove', (e) => {
+      e.preventDefault()
+    }, { passive: false })
+    // document.addEventListener('scroll', () => {
+    //   console.log(window.scrollX, window.scrollY)
+    // })
+    // 让屏幕自己滚
+    // setInterval(() => {
+    const target = circle.bodies[0].position
+    const main = document.querySelector('#main')
+    // const game = document.querySelector('#game')
+    // console.log(target.x)
+    if (target.y > 250) {
+      main.scrollTop = target.y - 250
+    }
+    // main.scrollTop = 100
+    console.log(main.scrollTop)
+    console.log(window.scrollY, target.y)
+    // })
   }
 }
 </script>
 
 <style lang="less" scoped>
+  #main {
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+  }
   #game {
+    position: relative;
     width: 100vw;
     height: 2000px;
     /*overflow: hidden;*/
