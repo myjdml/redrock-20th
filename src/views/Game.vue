@@ -504,7 +504,7 @@ export default {
         100,
         10 * p,
         {
-          friction: 0.1,
+          friction: 0.05,
           restitution: 0.2,
           frictionAir: 0.15
           // render: {
@@ -642,7 +642,7 @@ export default {
   }
   button {
     position: absolute;
-    bottom: 140px;
+    bottom: 130px;
     left: 190px;
     width: 373px;
     height: 136px;
