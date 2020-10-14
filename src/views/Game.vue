@@ -17,9 +17,9 @@
         <div class="bac2-icon2"></div>
         <div class="bac2-icon3"></div>
       </div>
-      <TextShow class="font"></TextShow>
+      <TextShow class="font" v-if="fontState"></TextShow>
 
-      <div id="cover" v-if="fontState"></div>
+      <div id="cover"></div>
     </div>
   </div>
 </template>
