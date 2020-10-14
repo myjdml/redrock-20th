@@ -528,18 +528,18 @@ export default {
     //   console.log(window.scrollX, window.scrollY)
     // })
     // 让屏幕自己滚
-    // setInterval(() => {
     const target = circle.bodies[0].position
     const main = document.querySelector('#main')
-    // const game = document.querySelector('#game')
-    // console.log(target.x)
-    if (target.y > 250) {
-      main.scrollTop = target.y - 250
-    }
-    // main.scrollTop = 100
-    console.log(main.scrollTop)
-    console.log(window.scrollY, target.y)
-    // })
+    setInterval(() => {
+      // const game = document.querySelector('#game')
+      // console.log(target.x)
+      if (target.y > 250) {
+        main.scrollTop = target.y - 250
+      }
+      // main.scrollTop = 100
+      console.log(main.scrollTop)
+      console.log(window.scrollY, target.y)
+    })
   }
 }
 </script>
