@@ -642,7 +642,7 @@ export default {
   }
   button {
     position: absolute;
-    bottom: 150px;
+    bottom: 140px;
     left: 190px;
     width: 373px;
     height: 136px;
