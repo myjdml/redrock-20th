@@ -18,6 +18,7 @@
         <div class="bac2-icon3"></div>
       </div>
       <TextShow class="font" v-if="fontState"></TextShow>
+      <button></button>
 
       <div id="cover"></div>
     </div>
@@ -501,7 +502,7 @@ export default {
       return Bodies.circle(
         375 / 2,
         100,
-        12,
+        12 * p,
         {
           friction: 0.1,
           restitution: 0.2,
@@ -535,8 +536,8 @@ export default {
       if (target.y > 250) {
         main.scrollTop = target.y - 250
       }
-      console.log(main.scrollTop)
-      console.log(window.scrollY, target.y)
+      // console.log(main.scrollTop)
+      // console.log(window.scrollY, target.y)
       if (target.y > 1900) {
         this.fontState = true
       }
@@ -555,7 +556,7 @@ export default {
   #game {
     position: relative;
     width: 100vw;
-    height: 2000px;
+    height: 4800px;
     /*overflow: hidden;*/
   }
   .bac1 {
@@ -635,9 +636,20 @@ export default {
     background-image: url("../assets/img/game/bac2-icon2.png");
     background-size: 100%;
   }
-
   .font {
     position: absolute;
     top: 3700px;
+  }
+  button {
+    position: absolute;
+    bottom: 150px;
+    left: 190px;
+    width: 373px;
+    height: 136px;
+    background-image: url("../assets/img/game/button.png");
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 100%;
+    outline: none;
+    border: none;
   }
 </style>
