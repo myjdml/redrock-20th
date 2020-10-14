@@ -105,7 +105,7 @@ export default {
     const world = engine.world
     // 初始化引擎
     const width = 375 * p
-    const height = 2235 * p
+    const height = 2335 * p
     // console.log(height, width);
     const render = Render.create({
       element: document.querySelector('#cover'),
@@ -537,7 +537,7 @@ export default {
       }
       console.log(main.scrollTop)
       console.log(window.scrollY, target.y)
-      if (target.y > 1850) {
+      if (target.y > 1900) {
         this.fontState = true
       }
     })

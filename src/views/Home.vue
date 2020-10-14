@@ -28,7 +28,32 @@ export default {
   methods: {
     Start () {
       this.$router.push('/game')
+      this.getGrant()
+    },
+    getGrant () {
+      if (this.is_ios()) {
+        window.DeviceOrientationEvent.requestPermission().then(state => {
+          switch (state) {
+            case 'granted':
+              break
+            case 'denied':
+              alert('你拒绝了使用陀螺仪')
+              break
+            case 'prompt':
+              alert('其他行为')
+              break
+          }
+        })
+      }
+    },
+    is_ios () {
+      if (navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+        return true
+      } else {
+        return false
+      }
     }
+  },
   },
   mounted () {
   }
