@@ -19,7 +19,7 @@
       </div>
       <TextShow class="font"></TextShow>
 
-      <div id="cover"></div>
+      <div id="cover" v-if="fontState"></div>
     </div>
   </div>
 </template>
@@ -38,7 +38,8 @@ export default {
   setup () {
     const state = reactive({
       controlX: {},
-      orienter: {}
+      orienter: {},
+      fontState: false
     })
     return {
       ...toRefs(state)
@@ -531,15 +532,16 @@ export default {
     const target = circle.bodies[0].position
     const main = document.querySelector('#main')
     setInterval(() => {
-      // const game = document.querySelector('#game')
-      // console.log(target.x)
       if (target.y > 250) {
         main.scrollTop = target.y - 250
       }
-      // main.scrollTop = 100
       console.log(main.scrollTop)
       console.log(window.scrollY, target.y)
+      if (target.y > 1660) {
+        this.fontState = true
+      }
     })
+    //
   }
 }
 </script>
