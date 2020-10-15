@@ -3,7 +3,7 @@
     <div class="main">
       <div>
         <div v-if="control.back" class="back" @click="Back"></div>
-        <div v-if="control.cancel" class="cancel"></div>
+        <div v-if="control.cancel" class="cancel" @click="closeAward"></div>
       </div>
 
       <FirstPick
@@ -65,6 +65,9 @@ export default {
       this.control.worked = false
       this.control.work_less = false
       this.control.back = !this.control.back
+    },
+    closeAward () {
+      this.$emit('change-award-state')
     }
   }
 }
@@ -72,17 +75,18 @@ export default {
 
 <style lang="less" scoped>
   #award {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, .5);
+    z-index: 4;
   }
   .main {
     position: absolute;
     top: 13.5vh;
-    left: 10vw;
+    left: 11vw;
     width: 78vw;
     height: 116vw;
     background-image: url("../assets/img/components/award/main-bac.png");

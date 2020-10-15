@@ -1,21 +1,17 @@
 <template>
   <div id="home">
     <div class="start-btn" @click="Start"></div>
-
-<!--    <Award></Award>-->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import { reactive, toRefs } from '@vue/reactivity'
-// import Award from '../components/Award'
 // import slideChange from '../utils/slideChange'
 
 export default {
   name: 'Home',
   components: {
-    // Award
   },
   setup () {
     const state = reactive({
@@ -28,7 +24,7 @@ export default {
   methods: {
     Start () {
       this.$router.push('/game')
-      this.getGrant()
+      // this.getGrant()
     },
     getGrant () {
       if (this.is_ios()) {

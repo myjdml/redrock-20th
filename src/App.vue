@@ -5,11 +5,14 @@
       <img src="./assets/img/icon/dang-icon.png" alt="dang-icon">
       <img src="./assets/img/icon/redrock-icon.png" alt="redrock-icon">
     </div>
-    <transition :name="pageChange">
-      <keep-alive>
-        <router-view @checkoutPage="handleCheckoutPage"></router-view>
-      </keep-alive>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </transition>
+    </router-view>
+
     <Player></Player>
   </div>
 </template>
@@ -81,5 +84,14 @@ export default {
   .prev-enter-active,
   .prev-leave-active {
     transition: all 1s;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: all 5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+  .fade-leave, .fade-enter-to {
+    opacity: 1;
   }
 </style>

@@ -7,18 +7,22 @@
       <div class="bac4"></div>
       <div class="tip"></div>
 
-      <div>
+      <div style="z-index: 3">
         <div class="bac1-icon1"></div>
         <div class="bac1-icon2"></div>
         <div class="bac1-icon3"></div>
       </div>
-      <div>
+      <div style="z-index: 3">
         <div class="bac2-icon1"></div>
         <div class="bac2-icon2"></div>
         <div class="bac2-icon3"></div>
       </div>
+      <div style="z-index: 3">
+        <div class="bac3-icon1"></div>
+      </div>
       <TextShow class="font" v-if="fontState"></TextShow>
-      <button></button>
+      <button @click="awardStart"></button>
+      <Award v-if="awardState" @change-award-state="changeAwardState"></Award>
 
       <div id="cover"></div>
     </div>
@@ -30,23 +34,33 @@ import { reactive, toRefs } from '@vue/reactivity'
 import Orienter from '../utils/orienter'
 import Matter from 'matter-js'
 import TextShow from '../components/game/TextShow'
+import Award from '../components/Award'
 
 export default {
   name: 'Game',
   components: {
+    Award,
     TextShow
   },
   setup () {
     const state = reactive({
       controlX: {},
       orienter: {},
-      fontState: false
+      fontState: false,
+      awardState: false
     })
     return {
       ...toRefs(state)
     }
   },
   methods: {
+    awardStart () {
+      this.awardState = true
+      console.log(this.awardState)
+    },
+    changeAwardState () {
+      this.awardState = false
+    },
     start (e) {
       const o = new Orienter()
       o.onOrient = function (obj) {
@@ -87,6 +101,9 @@ export default {
     }
   },
   mounted () {
+    // 过渡动画
+    this.$emit('change-page')
+    // 上流的物理引擎
     const w = window.innerWidth
     console.log('设备宽度', w)
     // 适配的宽度参数
@@ -504,9 +521,9 @@ export default {
         100,
         10 * p,
         {
-          friction: 0.05,
+          friction: 0,
           restitution: 0.2,
-          frictionAir: 0.15
+          frictionAir: 0.1
           // render: {
           //   sprite: {
           //     texture: that.img.src,
@@ -636,6 +653,15 @@ export default {
     background-image: url("../assets/img/game/bac2-icon2.png");
     background-size: 100%;
   }
+  .bac3-icon1 {
+    position: absolute;
+    top: 3244px;
+    left: 185px;
+    width: 114px;
+    height: 119px;
+    background-image: url("../assets/img/game/bac3-icon1.png");
+    background-size: 100%;
+  }
   .font {
     position: absolute;
     top: 3700px;
@@ -644,6 +670,7 @@ export default {
     position: absolute;
     bottom: 130px;
     left: 190px;
+    z-index: 3;
     width: 373px;
     height: 136px;
     background-image: url("../assets/img/game/button.png");
