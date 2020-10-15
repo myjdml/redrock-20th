@@ -7,17 +7,17 @@
       <div class="bac4"></div>
       <div class="tip"></div>
 
-      <div style="z-index: 3">
+      <div>
         <div class="bac1-icon1"></div>
         <div class="bac1-icon2"></div>
         <div class="bac1-icon3"></div>
       </div>
-      <div style="z-index: 3">
+      <div>
         <div class="bac2-icon1"></div>
         <div class="bac2-icon2"></div>
         <div class="bac2-icon3"></div>
       </div>
-      <div style="z-index: 3">
+      <div>
         <div class="bac3-icon1"></div>
       </div>
       <TextShow class="font" v-if="fontState"></TextShow>
@@ -35,6 +35,7 @@ import Orienter from '../utils/orienter'
 import Matter from 'matter-js'
 import TextShow from '../components/game/TextShow'
 import Award from '../components/Award'
+// import { getWorkLessInfo } from '../server/index'
 
 export default {
   name: 'Game',
@@ -559,7 +560,6 @@ export default {
         this.fontState = true
       }
     })
-    //
   }
 }
 </script>
@@ -617,6 +617,7 @@ export default {
     height: 563px;
     background-image: url("../assets/img/game/bac1-icon1.png");
     background-size: 100%;
+    z-index: 3;
   }
   .bac1-icon2 {
     position: absolute;
@@ -625,6 +626,7 @@ export default {
     height: 136px;
     background-image: url("../assets/img/game/bac1-icon2.png");
     background-size: 100%;
+    z-index: 3;
   }
   .bac1-icon3 {
     position: absolute;
@@ -634,6 +636,7 @@ export default {
     height: 62px;
     background-image: url("../assets/img/game/bac1-icon3.png");
     background-size: 100%;
+    z-index: 3;
   }
   .bac2-icon1 {
     position: absolute;
@@ -643,6 +646,7 @@ export default {
     height: 198px;
     background-image: url("../assets/img/game/bac2-icon1.png");
     background-size: 100%;
+    z-index: 3;
   }
   .bac2-icon2 {
     position: absolute;
@@ -652,6 +656,7 @@ export default {
     height: 736px;
     background-image: url("../assets/img/game/bac2-icon2.png");
     background-size: 100%;
+    z-index: 3;
   }
   .bac3-icon1 {
     position: absolute;
@@ -661,6 +666,7 @@ export default {
     height: 119px;
     background-image: url("../assets/img/game/bac3-icon1.png");
     background-size: 100%;
+    z-index: 3;
   }
   .font {
     position: absolute;

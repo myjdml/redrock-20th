@@ -9,8 +9,6 @@
 <script>
 export default {
   name: 'FirstPick',
-  setup () {
-  },
   methods: {
     showWorked () {
       this.$emit('show-worked-state')

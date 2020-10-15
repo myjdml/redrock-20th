@@ -38,12 +38,16 @@ export default {
   },
   mounted () {
     // console.log(this.$refs.cover.style.width = '23px')
-    console.log(this.time.num)
+    // console.log(this.time.num)
   },
   watch: {
     time: {
       handler (val, oldVal) {
         this.$refs.cover.style.width = `${val.num / 100 * 380 / 750 * 100}vw`
+        if (val.num === 100) {
+          console.log('tiao')
+          this.$router.push('/home')
+        }
       },
       deep: true
     }

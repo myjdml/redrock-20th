@@ -20,7 +20,7 @@
                     @change="previewFiles($event)"
                 />
                 <label for="fileUpload" class="add" v-if="image.length < 3">
-                    <img src="../assets/images/camera.png" alt="" />
+                    <img src="../../assets/img/edit-img/camera.png" alt="" />
                     <div class="limit">{{ image.length }}/3</div></label
                 >
             </div>
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 import EXIF from 'exif-js'
 
-import ImageLoadingSvg from '@/assets/svg/ImageLoading.svg'
-import { UPLOAD_IMAGE, DLELTE_IMAGE } from '../store/type/actions'
+import ImageLoadingSvg from '../../assets/svg/ImageLoading.svg'
+import { UPLOAD_IMAGE, DLELTE_IMAGE } from '../../store/type/actions'
 
 export default {
   name: 'QuestionEditPhoto',
@@ -113,13 +113,19 @@ export default {
       }
       // 允许多次选择同样的照片
       e.target.value = ''
+      console.log(this.$store.state)
     },
     handelDeleteClick (index) {
       this.$store.dispatch(DLELTE_IMAGE, index)
     }
   },
   computed: {
-    ...mapGetters(['editImage', 'imageUploading']),
+    editImage () {
+      return this.$store.state.image
+    },
+    imageUploading () {
+      return this.$store.state.isUploading
+    },
     image () {
       return this.editImage.map(item => URL.createObjectURL(item))
     }
@@ -129,7 +135,9 @@ export default {
 
 <style lang="less" scoped>
 ul {
-    margin: 41px 24px 10px;
+    /*margin: 41px 24px 10px;*/
+  /*margin-top: 200px;*/
+  padding: 0;
     display: flex;
     overflow: hidden;
     li {
@@ -139,15 +147,15 @@ ul {
             margin-right: 0;
         }
         img {
-            width: 228px;
-            height: 228px;
+            width: 143px;
+            height: 83px;
             border-radius: 5px;
             object-fit: cover;
             vertical-align: top;
         }
         .loading {
-            width: 228px;
-            height: 228px;
+            width: 147px;
+            height: 83px;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -166,7 +174,7 @@ ul {
                 height: 38px;
                 background: rgba(0, 0, 0, 0.25);
                 border-radius: 5px;
-                background-image: url('../assets/images/delete.png');
+                background-image: url('../../assets/img/edit-img/delete.png');
                 background-repeat: no-repeat;
                 background-size: contain;
                 // &::before {
@@ -203,22 +211,22 @@ ul {
     background-color: #f1f1f1;
     border-radius: 5px;
     opacity: 0.98;
-    width: 228px;
-    height: 228px;
+    width: 147px;
+    height: 83px;
     img {
-        width: 58px;
-        height: 49px;
+        width: 29px;
+        height: 25px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-29px, -24px);
+        transform: translate(-14.5px, -12.5px);
     }
     .limit {
         position: absolute;
         left: 50%;
-        bottom: 48px;
+        bottom: 58px;
         color: #808080;
-        font-size: 24px;
+        font-size: 14px;
         transform: translateX(-50%);
     }
 }

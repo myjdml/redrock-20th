@@ -1,21 +1,22 @@
 <template>
   <div id="text">
-<!--    <QuestionEditPhoto></QuestionEditPhoto>-->
-    <transition name="fade">
-      <div v-if="state">阿里</div>
-    </transition>
-    <button @click="state = !state" style="margin-top: 100px">点击</button>
+    <QuestionEditPhoto></QuestionEditPhoto>
+<!--    <transition name="fade">-->
+<!--      <div v-if="state">阿里</div>-->
+<!--    </transition>-->
+<!--    <button @click="state = !state" style="margin-top: 100px">点击</button>-->
+
   </div>
 </template>
 
 <script>
 import { reactive, toRefs } from '@vue/reactivity'
-// import QuestionEditPhoto from './game/EditImage'
+import QuestionEditPhoto from './game/EditImage'
 
 export default {
   name: 'Text',
   components: {
-    // QuestionEditPhoto
+    QuestionEditPhoto
   },
   props: {
   },
@@ -33,6 +34,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  #text {
+    height: 100vh;
+  }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }

@@ -29,10 +29,10 @@ export default {
     line-height: 55px;
   }
   input {
-    color: white;
+    color: #F5FEC4;
     padding: 0;
     width: 451px;
-    height: 65px;
+    height: 55px;
     margin-top: 10px;
     background: #7A59E9;
     border: 1px solid #47086C;
@@ -40,5 +40,18 @@ export default {
     text-align: center;
     line-height: 65px;
     outline: none;
+  }
+  /*修改placeholder颜色*/
+  ::-webkit-input-placeholder {
+    color: #AB9AED;
+  }
+  :-moz-placeholder {/* Firefox 18- */
+    color: #AB9AED;
+  }
+  ::-moz-placeholder{/* Firefox 19+ */
+    color: #AB9AED;
+  }
+  :-ms-input-placeholder {
+    color: #AB9AED;
   }
 </style>
