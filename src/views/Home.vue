@@ -24,7 +24,7 @@ export default {
   methods: {
     Start () {
       this.$router.push('/game')
-      // this.getGrant()
+      this.getGrant()
     },
     getGrant () {
       if (this.is_ios()) {
