@@ -11,11 +11,14 @@
         <div class="bac1-icon1"></div>
         <div class="bac1-icon2"></div>
         <div class="bac1-icon3"></div>
+        <div class="bac1-icon1-cover"></div>
+        <div class="bac1-icon2-cover"></div>
       </div>
       <div>
         <div class="bac2-icon1"></div>
         <div class="bac2-icon2"></div>
         <div class="bac2-icon3"></div>
+        <div class="bac2-icon2-cover"></div>
       </div>
       <div>
         <div class="bac3-icon1"></div>
@@ -23,6 +26,9 @@
       <TextShow class="font" v-if="fontState"></TextShow>
       <button @click="awardStart"></button>
       <Award v-if="awardState" @change-award-state="changeAwardState"></Award>
+
+      <div class="back-to-2020" @click="backTo2020"></div>
+      <div class="share" @click="shareImg"></div>
 
       <div id="cover"></div>
     </div>
@@ -61,6 +67,12 @@ export default {
     },
     changeAwardState () {
       this.awardState = false
+    },
+    backTo2020 () {
+      this.$router.push('/home')
+    },
+    shareImg () {
+      this.$router.push('/qr-code')
     },
     start (e) {
       const o = new Orienter()
@@ -188,7 +200,7 @@ export default {
         }
       }),
       // 倒烟囱组件板子
-      Bodies.rectangle(210 * p, 325 * p, 330 * p, 2, {
+      Bodies.rectangle(210 * p, 320 * p, 330 * p, 2, {
         isStatic: true,
         render: {
           fillStyle: 'rgba(255, 255, 255, 1)',
@@ -260,7 +272,7 @@ export default {
           strokeStyle: 'rgba(255, 255, 255, 1)'
         }
       }),
-      Bodies.rectangle(188 * p, 600 * p, 330 * p, 2, {
+      Bodies.rectangle(188 * p, 595 * p, 330 * p, 2, {
         isStatic: true,
         render: {
           fillStyle: 'rgba(255, 255, 255, 1)',
@@ -403,6 +415,13 @@ export default {
         }
       }),
       Bodies.rectangle(345 * p, 1010 * p, 2 * p, 95 * p, {
+        isStatic: true,
+        render: {
+          fillStyle: 'rgba(255, 255, 255, 1)',
+          strokeStyle: 'rgba(255, 255, 255, 1)'
+        }
+      }),
+      Bodies.rectangle(370 * p, 1010 * p, 2 * p, 145 * p, {
         isStatic: true,
         render: {
           fillStyle: 'rgba(255, 255, 255, 1)',
@@ -609,6 +628,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
   }
   .bac1-icon1 {
     position: absolute;
@@ -638,6 +658,26 @@ export default {
     background-size: 100%;
     z-index: 3;
   }
+  .bac1-icon1-cover {
+    position: absolute;
+    left: 241px;
+    top: 578px;
+    width: 32px;
+    height: 67px;
+    background-image: url("../assets/img/game/bac1-icon1-cover.png");
+    background-size: 100%;
+    z-index: 3;
+  }
+  .bac1-icon2-cover {
+    position: absolute;
+    left: 53px;
+    top: 1147px;
+    width: 15px;
+    height: 45px;
+    background-image: url("../assets/img/game/bac1-icon2-cover.png");
+    background-size: 100%;
+    z-index: 1;
+  }
   .bac2-icon1 {
     position: absolute;
     top: 1430px;
@@ -657,6 +697,16 @@ export default {
     background-image: url("../assets/img/game/bac2-icon2.png");
     background-size: 100%;
     z-index: 3;
+  }
+  .bac2-icon2-cover {
+    position: absolute;
+    left: 439px;
+    top: 2124px;
+    width: 28px;
+    height: 63px;
+    background-image: url("../assets/img/game/bac2-icon2-cover.png");
+    background-size: 100%;
+    z-index: 1;
   }
   .bac3-icon1 {
     position: absolute;
@@ -684,5 +734,23 @@ export default {
     background-size: 100%;
     outline: none;
     border: none;
+  }
+  .back-to-2020 {
+    position: absolute;
+    left: 28px;
+    bottom: 30px;
+    width: 331px;
+    height: 96px;
+    background-image: url("../assets/img/game/back-to-2020.png");
+    background-size: 100%;
+  }
+  .share {
+    position: absolute;
+    right: 28px;
+    bottom: 30px;
+    width: 269px;
+    height: 96px;
+    background-image: url("../assets/img/game/share.png");
+    background-size: 100%;
   }
 </style>
