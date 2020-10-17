@@ -8,7 +8,7 @@
     <p class="ani-6">2009年-基层理论宣讲先进集体</p>
     <p class="ani-7">2010年-重庆市五四红旗团支部</p>
     <p class="ani-8">2011年-首届重庆市IT杰出青年</p>
-    <p class="ani-9">2015年-全国高校践行社会主义核心价<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值观，示范团支部</p>
+    <p class="ani-9">2015年-全国高校践行社会主义核心价值观，<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;示范团支部</p>
     <p class="ani-10">2016年-最佳团体组织奖<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全国五四红旗团支部</p>
     <p class="ani-11">2018年-全国五四红旗团支部</p>
     <p class="ani-12">2019年-全国高校优秀网络栏目，重邮小帮手</p>
@@ -37,7 +37,7 @@ export default {
   }
   p {
     margin: 0 0 0 66px;
-    line-height: 2.1;
+    line-height: 2;
   }
   @keyframes fade-in
   {
