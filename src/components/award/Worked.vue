@@ -7,7 +7,7 @@
     ></MyInput>
     <MyInput :my-name="'电话'"
              :placeholder="'182****1663'"
-             :check_msg.sync="this.check_msg"
+             :check_msg="'(请输入正确电话)'"
              @get-input-value="getPhoneNum"
     ></MyInput>
     <MyInput :my-name="'届数'"
@@ -44,7 +44,7 @@ export default {
         address: '',
         file: ''
       },
-      check_msg: '请输入正确的电话号码'
+      formData: ''
     }
   },
   components: {
@@ -66,16 +66,20 @@ export default {
     },
     postWorked () {
       const Img = this.$store.state.image
-      this.formValue.file = this.handelImg(Img)
+      this.formData = this.handelImg(Img)
+      this.formData.append('name', this.formValue.name)
+      this.formData.append('phone', this.formValue.phone)
+      this.formData.append('gradeAndPosition', this.formValue.gradeAndPosition)
+      this.formData.append('address', this.formValue.address)
       console.log(this.formValue)
       console.log(this.$store.state.image[0])
-      postWorkedInfo('/redrocker/create', this.formValue, this.$store.state.image)
+      postWorkedInfo('/redrocker/create', this.formData)
     },
     handelImg (Img) {
       const formData = new FormData()
       Img.forEach(blob => {
         formData.append(
-          'uploadFile',
+          'file',
           blob,
           `${Math.random()
             .toString(36)

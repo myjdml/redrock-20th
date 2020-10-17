@@ -10,7 +10,7 @@
     ></MyInput>
     <MyInput :my-name="'电话'"
              :placeholder="'182****1663'"
-             :check_msg="this.check_msg"
+             :check_msg="'(请输入正确电话)'"
              @get-input-value="getPhoneNum"
     ></MyInput>
 
@@ -30,8 +30,7 @@ export default {
         name: '',
         sno: '',
         phone: ''
-      },
-      check_msg: '请输入正确的电话号码'
+      }
     }
   },
   methods: {

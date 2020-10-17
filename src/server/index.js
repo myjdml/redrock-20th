@@ -16,6 +16,13 @@ export const instance = axios.create({
     }
   ]
 })
+export const instanceImg = axios.create({
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://cyxbsmobile.redrock.team/wxapi/redrock-20th-anniversary/' : '/api',
+  timeout: 50000,
+  headers: {
+    'Content-Type': 'multipart/form-data'
+  }
+})
 export async function postWorkLessInfo (url, formValue) {
   return await instance.post(url, {
     name: formValue.name,
@@ -23,12 +30,6 @@ export async function postWorkLessInfo (url, formValue) {
     phone: formValue.phone
   })
 }
-export async function postWorkedInfo (url, formValue, file) {
-  return await instance.post(url, {
-    name: formValue.name,
-    phone: formValue.phone,
-    gradeAndPosition: formValue.gradeAndPosition,
-    address: formValue.address,
-    file: file[0]
-  })
+export async function postWorkedInfo (url, params) {
+  return await instanceImg.post(url, params)
 }

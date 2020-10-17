@@ -25,7 +25,7 @@ export default {
   methods: {
     handlePhoneNum (phoneNum) {
       if (this.$props.check_msg && !phoneText(phoneNum)) {
-        this.alert_msg = '(请输入正确电话)'
+        this.alert_msg = this.$props.check_msg
       } else {
         this.alert_msg = ''
       }
@@ -34,6 +34,7 @@ export default {
   mounted () {
     const input = this.$refs.myInput
     input.addEventListener('input', () => {
+      // console.log(this.value)
       const inputValue = this.value
       this.$emit('get-input-value', inputValue)
       // console.log(this.$props.check_msg)
