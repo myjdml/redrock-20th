@@ -4,7 +4,7 @@ export const instance = axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? 'https://cyxbsmobile.redrock.team/wxapi/redrock-20th-anniversary/' : '/api',
   timeout: 50000,
   headers: {
-    'Content-Type': 'multipart/form-data'
+    'Content-Type': 'application/x-www-form-urlencoded'
   },
   transformRequest: [
     function (data) {
