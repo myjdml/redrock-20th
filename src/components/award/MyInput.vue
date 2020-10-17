@@ -1,16 +1,30 @@
 <template>
     <div id="input">
       <div class="title">{{myName}}</div>
-      <input type="text" :placeholder="placeholder">
+      <input ref="myInput" type="text" :placeholder="placeholder" v-model="value">
     </div>
 </template>
 
 <script>
 export default {
   name: 'MyInput',
+  data () {
+    return {
+      value: ''
+    }
+  },
   props: {
     myName: String,
-    placeholder: String
+    placeholder: String,
+    check_msg: String
+  },
+  mounted () {
+    const input = this.$refs.myInput
+    input.addEventListener('input', () => {
+      const inputValue = this.value
+      this.$emit('get-input-value', inputValue)
+      console.log(this.props.check_msg)
+    })
   }
 }
 </script>
