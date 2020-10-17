@@ -14,20 +14,22 @@
              @get-input-value="getPhoneNum"
     ></MyInput>
 
-    <div class="confirm"></div>
+    <div class="confirm" @click="postWorkLess"></div>
   </div>
 </template>
 
 <script>
 import MyInput from './MyInput'
+import { postWorkLessInfo } from '../../server'
+
 export default {
   name: 'WorkLess',
   data () {
     return {
       formValue: {
         name: '',
-        stu_num: '',
-        phone_num: ''
+        sno: '',
+        phone: ''
       },
       check_msg: '请输入正确的电话号码'
     }
@@ -37,10 +39,14 @@ export default {
       this.formValue.name = val
     },
     getStuNum (val) {
-      this.formValue.stu_num = val
+      this.formValue.sno = val
     },
     getPhoneNum (val) {
-      this.formValue.phone_num = val
+      this.formValue.phone = val
+    },
+    postWorkLess () {
+      console.log(this.formValue)
+      postWorkLessInfo('/student/create', this.formValue)
     }
   },
   components: {
