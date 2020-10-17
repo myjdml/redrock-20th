@@ -68,8 +68,8 @@ export default {
       const Img = this.$store.state.image
       this.formValue.file = this.handelImg(Img)
       console.log(this.formValue)
-      console.log(this.formValue.file)
-      postWorkedInfo('/redrocker/create', this.formValue)
+      console.log(this.$store.state.image[0])
+      postWorkedInfo('/redrocker/create', this.formValue, this.$store.state.image)
     },
     handelImg (Img) {
       const formData = new FormData()

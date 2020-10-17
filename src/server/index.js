@@ -23,12 +23,12 @@ export async function postWorkLessInfo (url, formValue) {
     phone: formValue.phone
   })
 }
-export async function postWorkedInfo (url, formValue) {
+export async function postWorkedInfo (url, formValue, file) {
   return await instance.post(url, {
     name: formValue.name,
     phone: formValue.phone,
     gradeAndPosition: formValue.gradeAndPosition,
     address: formValue.address,
-    file: formValue.file
+    file: file
   })
 }
