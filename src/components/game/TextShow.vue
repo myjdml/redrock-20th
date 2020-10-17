@@ -37,7 +37,7 @@ export default {
   }
   p {
     margin: 0 0 0 66px;
-    line-height: 2;
+    line-height: 1.8;
   }
   @keyframes fade-in
   {
