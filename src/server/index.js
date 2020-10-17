@@ -29,6 +29,6 @@ export async function postWorkedInfo (url, formValue, file) {
     phone: formValue.phone,
     gradeAndPosition: formValue.gradeAndPosition,
     address: formValue.address,
-    file: file
+    file: file[0]
   })
 }
