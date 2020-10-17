@@ -21,6 +21,7 @@
     "matter-js": "^0.14.2",
     "normalize.css": "^8.0.1",
     "postcss-px-to-viewport": "^1.1.1",
+    "qs": "^6.9.4",
     "vconsole": "^3.3.4",
     "vue": "^3.0.0-0",
     "vue-axios": "^3.0.1",
