@@ -6,7 +6,7 @@
       <img src="./assets/img/icon/redrock-icon.png" alt="redrock-icon">
     </div>
     <router-view v-slot="{ Component }">
-      <transition name="fade">
+      <transition class="text">
         <keep-alive>
           <component :is="Component" />
         </keep-alive>
@@ -86,12 +86,14 @@ export default {
     transition: all 1s;
   }
   .fade-enter-active, .fade-leave-active {
-    transition: all 5s;
+    transition: all 5s linear;
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
   }
   .fade-leave, .fade-enter-to {
     opacity: 1;
+  }
+  .text {
   }
 </style>

@@ -79,7 +79,7 @@ export default {
     position: absolute;
     top: 6px;
     left: 80px;
-    width: 165px;
+    width: 265px;
     height: 20px;
     font-size: 20px;
     font-weight: 400;
