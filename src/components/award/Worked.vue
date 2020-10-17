@@ -3,21 +3,21 @@
   <div id="worked" class="flex-cul">
     <MyInput :my-name="'姓名'"
              :placeholder="'张三'"
-             @get-input-value="getName">
-    </MyInput>
+             @get-input-value="getName"
+    ></MyInput>
     <MyInput :my-name="'电话'"
              :placeholder="'182****1663'"
              :check_msg.sync="this.check_msg"
-             @get-input-value="getPhoneNum">
-    </MyInput>
+             @get-input-value="getPhoneNum"
+    ></MyInput>
     <MyInput :my-name="'届数'"
              :placeholder="'18'"
-             @get-input-value="getTh">
-    </MyInput>
+             @get-input-value="gradeAndPosition"
+    ></MyInput>
     <MyInput :my-name="'邮寄地址'"
              :placeholder="'重邮**省**小区邮寄点'"
-             @get-input-value="getAddress">
-    </MyInput>
+             @get-input-value="getAddress"
+    ></MyInput>
 <!--    <div style="height: 10px"></div>-->
     <div class="img-input">
       <p class="img-input-title">添加图片&nbsp;&nbsp;<span>(附加证明信息)</span></p>
@@ -31,17 +31,18 @@
 <script>
 import MyInput from './MyInput'
 import QuestionEditPhoto from '../game/EditImage'
-import phoneText from '../../utils/phoneText'
+import { postWorkedInfo } from '../../server/index'
+
 export default {
   name: 'Worked',
   data () {
     return {
       formValue: {
         name: '',
-        phone_num: '',
-        th: '',
+        phone: '',
+        gradeAndPosition: '',
         address: '',
-        form: ''
+        file: ''
       },
       check_msg: '请输入正确的电话号码'
     }
@@ -55,19 +56,20 @@ export default {
       this.formValue.name = val
     },
     getPhoneNum (val) {
-      this.formValue.phone_num = val
+      this.formValue.phone = val
     },
-    getTh (val) {
-      this.formValue.th = val
+    gradeAndPosition (val) {
+      this.formValue.gradeAndPosition = val
     },
     getAddress (val) {
       this.formValue.address = val
     },
     postWorked () {
       const Img = this.$store.state.image
-      this.formValue.form = this.handelImg(Img)
+      this.formValue.file = this.handelImg(Img)
       console.log(this.formValue)
-      console.log(this.formValue.form)
+      console.log(this.formValue.file)
+      postWorkedInfo('/redrocker/create', this.formValue)
     },
     handelImg (Img) {
       const formData = new FormData()
@@ -81,18 +83,10 @@ export default {
         )
       })
       return formData
-    },
-    handlePhoneNum () {
-      if (!phoneText(this.formValue.phone_num)) {
-        this.formValue.check_msg = '请输入正确的电话号码'
-      } else {
-        this.formValue.check_msg = ''
-      }
     }
   },
   mounted () {
     console.log(this.$store.state.image)
-    this.handlePhoneNum()
   }
 }
 </script>

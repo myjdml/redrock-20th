@@ -1,8 +1,18 @@
 <template>
   <div id="work-less" class="flex-cul">
-    <MyInput :my-name="'姓名'" :placeholder="'张三'"></MyInput>
-    <MyInput :my-name="'学号'" :placeholder="'2019***211'"></MyInput>
-    <MyInput :my-name="'联系电话'" :placeholder="'182****1663'"></MyInput>
+    <MyInput :my-name="'姓名'"
+             :placeholder="'张三'"
+             @get-input-value="getName"
+    ></MyInput>
+    <MyInput :my-name="'学号'"
+             :placeholder="'2019***211'"
+             @get-input-value="getStuNum"
+    ></MyInput>
+    <MyInput :my-name="'电话'"
+             :placeholder="'182****1663'"
+             :check_msg="this.check_msg"
+             @get-input-value="getPhoneNum"
+    ></MyInput>
 
     <div class="confirm"></div>
   </div>
@@ -12,6 +22,27 @@
 import MyInput from './MyInput'
 export default {
   name: 'WorkLess',
+  data () {
+    return {
+      formValue: {
+        name: '',
+        stu_num: '',
+        phone_num: ''
+      },
+      check_msg: '请输入正确的电话号码'
+    }
+  },
+  methods: {
+    getName (val) {
+      this.formValue.name = val
+    },
+    getStuNum (val) {
+      this.formValue.stu_num = val
+    },
+    getPhoneNum (val) {
+      this.formValue.phone_num = val
+    }
+  },
   components: {
     MyInput
   }
