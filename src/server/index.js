@@ -19,16 +19,16 @@ export const instance = axios.create({
 export async function postWorkLessInfo (url, formValue) {
   return await instance.post(url, {
     name: formValue.name,
-    phone: formValue.phone,
-    gradeAndPosition: formValue.gradeAndPosition,
-    address: formValue.address,
-    file: formValue.file
+    sno: formValue.sno,
+    phone: formValue.phone
   })
 }
 export async function postWorkedInfo (url, formValue) {
   return await instance.post(url, {
     name: formValue.name,
-    sno: formValue.sno,
-    phone: formValue.phone
+    phone: formValue.phone,
+    gradeAndPosition: formValue.gradeAndPosition,
+    address: formValue.address,
+    file: formValue.file
   })
 }
