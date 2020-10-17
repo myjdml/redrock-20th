@@ -7,9 +7,19 @@ export const instance = axios.create({
     'Content-Type': 'multipart/form-data'
   }
 })
-export async function postWorkLessInfo (url, params) {
-  return await instance.post(url, params)
+export async function postWorkLessInfo (url, formValue) {
+  return await instance.post(url, {
+    name: formValue.name,
+    phone: formValue.phone,
+    gradeAndPosition: formValue.gradeAndPosition,
+    address: formValue.address,
+    file: formValue.file
+  })
 }
-export async function postWorkedInfo (url, params) {
-  return await instance.post(url, params)
+export async function postWorkedInfo (url, formValue) {
+  return await instance.post(url, {
+    name: formValue.name,
+    sno: formValue.sno,
+    phone: formValue.phone
+  })
 }
