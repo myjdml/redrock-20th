@@ -8,7 +8,8 @@ export default createStore({
   state: {
     image: [],
     imageId: [],
-    isUploading: false
+    isUploading: false,
+    routerState: false
   },
   mutations: {
     [SET_IMAGE_UPLOADING] (state) {

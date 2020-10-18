@@ -24,7 +24,7 @@
       <QuestionEditPhoto></QuestionEditPhoto>
     </div>
 
-    <div class="confirm" @click="postWorked"></div>
+    <div class="confirm" ref="confirm" @click="postWorked"></div>
   </div>
 </template>
 
@@ -51,6 +51,16 @@ export default {
     QuestionEditPhoto,
     MyInput
   },
+  watch: {
+    formValue: {
+      handler (val, oldVal) {
+        if (val.name !== '' && val.gradeAndPosition !== '' && val.phone !== '' && val.address !== '') {
+          this.$refs.confirm.className = 'confirm_img'
+        }
+      },
+      deep: true
+    }
+  },
   methods: {
     getName (val) {
       this.formValue.name = val
@@ -71,9 +81,16 @@ export default {
       this.formData.append('phone', this.formValue.phone)
       this.formData.append('gradeAndPosition', this.formValue.gradeAndPosition)
       this.formData.append('address', this.formValue.address)
-      console.log(this.formValue)
-      console.log(this.$store.state.image[0])
-      postWorkedInfo('/redrocker/create', this.formData)
+      // console.log(this.formValue)
+      // console.log(this.$store.state.image[0])
+      postWorkedInfo('/redrocker/create', this.formData).then((response) => {
+        console.log('回复', response)
+        if (response.code === 10000) {
+          this.$emit('sign-up-success')
+        } else {
+          this.$emit('fail')
+        }
+      })
     },
     handelImg (Img) {
       const formData = new FormData()
@@ -107,6 +124,15 @@ export default {
     align-items: center;
   }
   .confirm {
+    position: absolute;
+    bottom: 3px;
+    width: 220px;
+    height: 101px;
+    background-image: url("../../assets/img/components/award/confirm_unready.png");
+    background-size: 100%;
+    z-index: 3;
+  }
+  .confirm_img {
     position: absolute;
     bottom: 3px;
     width: 220px;

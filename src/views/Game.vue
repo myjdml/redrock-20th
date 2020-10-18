@@ -25,8 +25,13 @@
       </div>
       <TextShow class="font" v-if="fontState"></TextShow>
       <button @click="awardStart"></button>
-      <Award v-if="awardState" @change-award-state="changeAwardState"></Award>
-
+      <Award
+        v-if="awardState"
+        @change-award-state="changeAwardState"
+        @sign-up-success="signUpSuccess"
+        @fail="fail"
+      ></Award>
+      <ConfirmInfo v-if="confirmInfo.state" :Info="confirmInfo.msg"></ConfirmInfo>
       <div class="back-to-2020" @click="backTo2020"></div>
       <div class="share" @click="shareImg"></div>
 
@@ -41,11 +46,13 @@ import Orienter from '../utils/orienter'
 import Matter from 'matter-js'
 import TextShow from '../components/game/TextShow'
 import Award from '../components/Award'
+import ConfirmInfo from '../components/award/ConfirmInfo'
 // import { getWorkLessInfo } from '../server/index'
 
 export default {
   name: 'Game',
   components: {
+    ConfirmInfo,
     Award,
     TextShow
   },
@@ -54,7 +61,15 @@ export default {
       controlX: {},
       orienter: {},
       fontState: false,
-      awardState: false
+      awardState: false,
+      confirmInfo: {
+        state: false,
+        msg: '',
+        info: {
+          success: '参与抽奖成功',
+          repeat: '请勿重复报名哦'
+        }
+      }
     })
     return {
       ...toRefs(state)
@@ -88,6 +103,18 @@ export default {
       console.log(o.onOrient)
       o.on()
       this.orienter = o
+    },
+    // 反馈状态
+    signUpSuccess () {
+      this.awardState = false
+      this.confirmInfo.msg = this.confirmInfo.info.success
+      this.confirmInfo.state = true
+      setTimeout(() => {
+        this.confirmInfo.state = false
+      }, 2000)
+    },
+    fail () {
+      this.awardState = false
     },
     getGrant () {
       if (this.is_ios()) {

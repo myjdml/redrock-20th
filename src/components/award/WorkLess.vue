@@ -14,7 +14,7 @@
              @get-input-value="getPhoneNum"
     ></MyInput>
 
-    <div class="confirm" @click="postWorkLess"></div>
+    <div class="confirm" ref="confirm" @click="postWorkLess"></div>
   </div>
 </template>
 
@@ -33,6 +33,9 @@ export default {
       }
     }
   },
+  mounted () {
+    console.log(this.$refs)
+  },
   methods: {
     getName (val) {
       this.formValue.name = val
@@ -45,11 +48,30 @@ export default {
     },
     postWorkLess () {
       console.log(this.formValue)
-      postWorkLessInfo('/student/create', this.formValue)
+      postWorkLessInfo('/student/create', this.formValue).then((response) => {
+        console.log('回复', response)
+        if (response.code === 10000) {
+          this.$emit('sign-up-success')
+        } else {
+          this.$emit('fail')
+        }
+      })
+      console.log(this.$refs.confirm.style.backgroundImage = 'url("../../assets/img/components/award/confirm.png")')
     }
   },
   components: {
     MyInput
+  },
+  watch: {
+    formValue: {
+      handler (val, oldVal) {
+        if (val.name !== '' && val.sno !== '' && val.phone !== '') {
+          console.log(this.$refs.confirm.className)
+          this.$refs.confirm.className = 'confirm_img'
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>
@@ -70,8 +92,17 @@ export default {
     bottom: 63px;
     width: 220px;
     height: 101px;
-    background-image: url("../../assets/img/components/award/confirm.png");
+    background-image: url("../../assets/img/components/award/confirm_unready.png");
     background-size: 100%;
     z-index: 3;
+  }
+  .confirm_img {
+    position: absolute;
+    bottom: 63px;
+    width: 220px;
+    height: 101px;
+    background-image: url("../../assets/img/components/award/confirm.png");
+    background-size: 100%;
+    z-index: 3;;
   }
 </style>

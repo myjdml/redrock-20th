@@ -11,8 +11,8 @@
         @show-worked-state="showWorkedState"
         @show-work-less-state="showWorkLessState">
       </FirstPick>
-      <Worked v-if="control.worked"></Worked>
-      <WorkLess v-if="control.work_less"></WorkLess>
+      <Worked v-if="control.worked" v-bind="$attrs"></Worked>
+      <WorkLess v-if="control.work_less" v-bind="$attrs"></WorkLess>
     </div>
   </div>
 </template>
