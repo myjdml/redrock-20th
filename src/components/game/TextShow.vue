@@ -34,7 +34,7 @@ export default {
     font-family: Coder,serif;
     color: #F5FDC4;
     font-size: 28px;
-    margin-top: 60px;
+    margin-top: 70px;
   }
   p {
     margin: 0 0 0 66px;
