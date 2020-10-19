@@ -760,7 +760,7 @@ export default {
   }
   button {
     position: absolute;
-    bottom: 130px;
+    bottom: 155px;
     left: 190px;
     z-index: 3;
     width: 373px;
