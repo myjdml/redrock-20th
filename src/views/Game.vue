@@ -614,7 +614,7 @@ export default {
         100,
         8 * p,
         {
-          friction: 0,
+          friction: 0.5,
           restitution: 0.2,
           frictionAir: 0.15,
           render: {
