@@ -46,62 +46,62 @@ export default {
   }
   .ani-1 {
     opacity: 0;
-    animation: fade-in 2s ease 0s 1;
+    animation: fade-in 2s ease 1s 1;
     animation-fill-mode:forwards;
   }
   .ani-2 {
     opacity: 0;
-    animation: fade-in 2s ease 1s 1;
+    animation: fade-in 2s ease 2s 1;
     animation-fill-mode:forwards;
   }
   .ani-3 {
     opacity: 0;
-    animation: fade-in 2s ease 2s 1;
+    animation: fade-in 2s ease 3s 1;
     animation-fill-mode:forwards;
   }
   .ani-4 {
     opacity: 0;
-    animation: fade-in 2s ease 3s 1;
+    animation: fade-in 2s ease 4s 1;
     animation-fill-mode:forwards;
   }
   .ani-5 {
     opacity: 0;
-    animation: fade-in 2s ease 4s 1;
+    animation: fade-in 2s ease 5s 1;
     animation-fill-mode:forwards;
   }
   .ani-6 {
     opacity: 0;
-    animation: fade-in 2s ease 5s 1;
+    animation: fade-in 2s ease 6s 1;
     animation-fill-mode:forwards;
   }
   .ani-7 {
     opacity: 0;
-    animation: fade-in 2s ease 6s 1;
+    animation: fade-in 2s ease 7s 1;
     animation-fill-mode:forwards;
   }
   .ani-8 {
     opacity: 0;
-    animation: fade-in 2s ease 7s 1;
+    animation: fade-in 2s ease 8s 1;
     animation-fill-mode:forwards;
   }
   .ani-9 {
     opacity: 0;
-    animation: fade-in 2s ease 8s 1;
+    animation: fade-in 2s ease 9s 1;
     animation-fill-mode:forwards;
   }
   .ani-10 {
     opacity: 0;
-    animation: fade-in 2s ease 9s 1;
+    animation: fade-in 2s ease 10s 1;
     animation-fill-mode:forwards;
   }
   .ani-11 {
     opacity: 0;
-    animation: fade-in 2s ease 10s 1;
+    animation: fade-in 2s ease 11s 1;
     animation-fill-mode:forwards;
   }
   .ani-12 {
     opacity: 0;
-    animation: fade-in 2s ease 11s 1;
+    animation: fade-in 2s ease 12s 1;
     animation-fill-mode:forwards;
   }
 </style>

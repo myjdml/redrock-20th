@@ -10,7 +10,7 @@
 </template>
 
 <script>
-
+/* eslint-disable no-unused-vars */
 import { reactive, toRefs } from '@vue/reactivity'
 import { onMounted } from '@vue/runtime-core'
 import loading from '../utils/loading'
@@ -39,6 +39,22 @@ export default {
   mounted () {
     // console.log(this.$refs.cover.style.width = '23px')
     // console.log(this.time.num)
+    let count = 0
+    const imgs = [
+      // 用require的方式添加图片地址，直接添加图片地址的话，在build打包之后会查找不到图片，因为打包之后的图片名称会有一个加密的字符串
+      require('../assets/img/home/background.png'),
+      require('../assets/img/game/bac1.png'),
+      require('../assets/img/game/bac2.png'),
+      require('../assets/img/game/bac3.png'),
+      require('../assets/img/qr-code/background.png')
+    ]
+    for (const img of imgs) {
+      const image = new Image()
+      image.onload = () => {
+        count++
+      }
+      image.src = img
+    }
   },
   watch: {
     time: {
