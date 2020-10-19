@@ -604,6 +604,7 @@ export default {
     // 让屏幕自己滚
     const target = circle.bodies[0].position
     const main = document.querySelector('#main')
+    main.scrollTop = 0 // 初始化
     setInterval(() => {
       if (target.y > 250) {
         main.scrollTop = target.y - 250
