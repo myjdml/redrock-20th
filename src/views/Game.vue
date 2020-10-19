@@ -356,12 +356,12 @@ export default {
         {
           friction: 0.1,
           restitution: 0.2,
-          frictionAir: 0.1,
-          render: {
-            sprite: {
-              texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
-            }
-          }
+          frictionAir: 0.1
+          // render: {
+          //   sprite: {
+          //     texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
+          //   }
+          // }
         }
       )
     })
