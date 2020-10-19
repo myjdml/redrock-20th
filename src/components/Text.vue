@@ -13,6 +13,7 @@
 
 <script>
 import { reactive, toRefs } from '@vue/reactivity'
+import Matter from 'matter-js'
 // import QuestionEditPhoto from './game/EditImage'
 
 export default {
@@ -38,6 +39,29 @@ export default {
       // this.$refs.target.className = 'textD'
       // console.log(this.$refs.target.className)
     }
+  },
+  /* eslint-disable  padded-blocks */
+  /* eslint-disable  no-undef */
+  mounted () {
+    const Bodies = Matter.Bodies
+    const p = 1
+    const arr = [
+      [190 * p, 148 * p, 90 * p, 2],
+      [140 * p, 138 * p, 2, 40 * p]
+    ]
+    const reverse = arr.map((item) => {
+      return (
+        Bodies.rectangle(item[0], item[0], item[0], item[0], {
+          isStatic: true,
+          render: {
+            fillStyle: 'rgba(255, 255, 255, 0)',
+            strokeStyle: 'rgba(255, 255, 255, 0)'
+          }
+        })
+      )
+    })
+    console.log(reverse)
+
   }
 }
 </script>

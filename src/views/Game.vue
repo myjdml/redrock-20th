@@ -227,368 +227,95 @@ export default {
     Render.run(render)
     // 挂载引擎
     // 生成墙壁
-    World.add(engine.world, [
-      // 生成边界墙壁
-      Bodies.rectangle(0, 0, 750 * p, 1, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 0)',
-          strokeStyle: 'rgba(255, 255, 255, 0)'
-        }
-      }),
-      Bodies.rectangle(0, 0, 1, 4470 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 0)',
-          strokeStyle: 'rgba(255, 255, 255, 0)'
-        }
-      }),
-      // Bodies.rectangle(0, 2235 * p, 750 * p, 3, {
-      //   isStatic: true,
-      //   render: {
-      //     fillStyle: 'rgba(255, 255, 255, 1)',
-      //     strokeStyle: 'rgba(255, 255, 255, 1)'
-      //   }
-      // }),
-      Bodies.rectangle(375 * p, 0, 1, 4470 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 0)',
-          strokeStyle: 'rgba(255, 255, 255, 0)'
-        }
-      }),
-      // 梦开始的地方
-      Bodies.rectangle(190 * p, 148 * p, 90 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(140 * p, 138 * p, 2, 40 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 倒烟囱组件板子
-      Bodies.rectangle(210 * p, 320 * p, 330 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(70 * p, 290 * p, 110 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(122 * p, 280 * p, 2, 25 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(42 * p, 342 * p, 2, 40 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(17 * p, 322 * p, 2, 60 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 倒烟囱组件板子
-      // 水管子组件板子
-      Bodies.trapezoid(320 * p, 538 * p, 10 * p, 16 * p, 3, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.trapezoid(365 * p, 538 * p, -10 * p, 16 * p, 3, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(330 * p, 558 * p, 2, 27 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(355 * p, 570 * p, 2, 50 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(178 * p, 575 * p, 300 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(188 * p, 595 * p, 330 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 水管子组件板子
-      Bodies.rectangle(0, 460 * p, 395 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(260 * p, 494 * p, 90 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(210 * p, 484 * p, 2, 40 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 0, 0, 1)',
-          strokeStyle: 'rgba(255, 0, 0, 1)'
-        }
-      }),
-      Bodies.rectangle(30 * p, 680 * p, 90 * p, 2, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 第二页的管子
-      Bodies.trapezoid(195 * p, 738 * p, -13 * p, 40 * p, 3, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.trapezoid(128 * p, 738 * p, 13 * p, 40 * p, 3, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(145 * p, 768 * p, 10 * p, 35 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(180 * p, 782 * p, 5 * p, 60 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(160 * p, 812 * p, 40 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(18 * p, 892 * p, 50 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(103 * p, 892 * p, 60 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(45 * p, 930 * p, 2 * p, 60 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(70 * p, 905 * p, 2 * p, 20 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(65 * p, 945 * p, 45 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(95 * p, 915 * p, 45 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(110 * p, 925 * p, 2 * p, 20 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(85 * p, 955 * p, 2 * p, 20 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(215 * p, 965 * p, 260 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(245 * p, 935 * p, 260 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(345 * p, 1010 * p, 2 * p, 95 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(370 * p, 1010 * p, 2 * p, 145 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(325 * p, 1090 * p, 200 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(285 * p, 1060 * p, 120 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 第二页的管子
-      Bodies.rectangle(165 * p, 1190 * p, 320 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(285 * p, 1295 * p, 170 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(125 * p, 1490 * p, 260 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 第三页的管子
-      Bodies.rectangle(250 * p, 1652 * p, 250 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(120 * p, 1625 * p, 50 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(95 * p, 1655 * p, 2 * p, 50 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(125 * p, 1667 * p, 2 * p, 30 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      // 第三页的管子
-      Bodies.rectangle(215 * p, 1770 * p, 2 * p, 30 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(105 * p, 1755 * p, 200 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      }),
-      Bodies.rectangle(255 * p, 1785 * p, 90 * p, 2 * p, {
-        isStatic: true,
-        render: {
-          fillStyle: 'rgba(255, 255, 255, 1)',
-          strokeStyle: 'rgba(255, 255, 255, 1)'
-        }
-      })
-    ])
+    // 生成边界墙壁
+    const boundaryArr = [
+      [0, 0, 750 * p, 1],
+      [0, 0, 1, 4470 * p],
+      [375 * p, 0, 1, 4470 * p]
+    ]
+    // 梦开始的地方
+    const dreamStart = [
+      [190 * p, 148 * p, 90 * p, 2],
+      [140 * p, 138 * p, 2, 40 * p]
+    ]
+    // 倒烟囱组件板子
+    const invertedPipe = [
+      [210 * p, 320 * p, 330 * p, 2],
+      [70 * p, 290 * p, 110 * p, 2],
+      [122 * p, 280 * p, 2, 25 * p],
+      [42 * p, 342 * p, 2, 40 * p],
+      [17 * p, 322 * p, 2, 60 * p]
+    ]
+    // 水管子组件板子
+    const Pipe = [
+      [320 * p, 538 * p, 10 * p, 16 * p, 3],
+      [365 * p, 538 * p, -10 * p, 16 * p, 3],
+      [330 * p, 558 * p, 2, 27 * p],
+      [355 * p, 570 * p, 2, 50 * p],
+      [178 * p, 575 * p, 300 * p, 2],
+      [188 * p, 595 * p, 330 * p, 2]
+    ]
+    // 第二页直板子
+    const secondPageHorizontalPipe = [
+      [0, 460 * p, 395 * p, 2],
+      [260 * p, 494 * p, 90 * p, 2],
+      [210 * p, 484 * p, 2, 40 * p],
+      [30 * p, 680 * p, 90 * p, 2]
+    ]
+    // 第二页管子
+    const secondPagePipe = [
+      [195 * p, 738 * p, -13 * p, 40 * p, 3],
+      [128 * p, 738 * p, 13 * p, 40 * p, 3],
+      [145 * p, 768 * p, 10 * p, 35 * p],
+      [180 * p, 782 * p, 5 * p, 60 * p],
+      [160 * p, 812 * p, 40 * p, 2 * p],
+      [18 * p, 892 * p, 50 * p, 2 * p],
+      [103 * p, 892 * p, 60 * p, 2 * p],
+      [45 * p, 930 * p, 2 * p, 60 * p],
+      [70 * p, 905 * p, 2 * p, 20 * p],
+      [65 * p, 945 * p, 45 * p, 2 * p],
+      [95 * p, 915 * p, 45 * p, 2 * p],
+      [110 * p, 925 * p, 2 * p, 20 * p],
+      [85 * p, 955 * p, 2 * p, 20 * p],
+      [215 * p, 965 * p, 260 * p, 2 * p],
+      [245 * p, 935 * p, 260 * p, 2 * p],
+      [345 * p, 1010 * p, 2 * p, 95 * p],
+      [370 * p, 1010 * p, 2 * p, 145 * p],
+      [325 * p, 1090 * p, 200 * p, 2 * p],
+      [285 * p, 1060 * p, 120 * p, 2 * p]
+    ]
+    // 第三页直板子
+    const thirdPageHorizontalPipe = [
+      [165 * p, 1190 * p, 320 * p, 2 * p],
+      [285 * p, 1295 * p, 170 * p, 2 * p],
+      [125 * p, 1490 * p, 260 * p, 2 * p]
+    ]
+    // 第三页的管子
+    const thirdPagePipe = [
+      [250 * p, 1652 * p, 250 * p, 2 * p],
+      [120 * p, 1625 * p, 50 * p, 2 * p],
+      [95 * p, 1655 * p, 2 * p, 50 * p],
+      [125 * p, 1667 * p, 2 * p, 30 * p]
+    ]
+    const lastHorizontalPipe = [
+      [215 * p, 1770 * p, 2 * p, 30 * p],
+      [105 * p, 1755 * p, 200 * p, 2 * p],
+      [255 * p, 1785 * p, 90 * p, 2 * p]
+    ]
+    // 所有的墙
+    const allArr = boundaryArr.concat(dreamStart, invertedPipe, Pipe, secondPageHorizontalPipe, secondPagePipe, thirdPageHorizontalPipe, thirdPagePipe, lastHorizontalPipe)
+    const reverseArr = allArr.map((item) => {
+      return (
+        Bodies.rectangle(...item, {
+          isStatic: true,
+          render: {
+            fillStyle: 'rgba(255, 255, 255, 0)',
+            strokeStyle: 'rgba(255, 255, 255, 0)'
+          }
+        })
+      )
+    })
+    World.add(engine.world, [...reverseArr])
     // 生成正方体
     // const stack = Composites.stack(0, 0, 1, 1, 0, 0, function () {
     //   return Bodies.rectangle(
