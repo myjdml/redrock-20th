@@ -248,8 +248,6 @@ export default {
     ]
     // 水管子组件板子
     const Pipe = [
-      [320 * p, 538 * p, 10 * p, 16 * p, 3],
-      [365 * p, 538 * p, -10 * p, 16 * p, 3],
       [330 * p, 558 * p, 2, 27 * p],
       [355 * p, 570 * p, 2, 50 * p],
       [178 * p, 575 * p, 300 * p, 2],
@@ -264,8 +262,6 @@ export default {
     ]
     // 第二页管子
     const secondPagePipe = [
-      [195 * p, 738 * p, -13 * p, 40 * p, 3],
-      [128 * p, 738 * p, 13 * p, 40 * p, 3],
       [145 * p, 768 * p, 10 * p, 35 * p],
       [180 * p, 782 * p, 5 * p, 60 * p],
       [160 * p, 812 * p, 40 * p, 2 * p],
@@ -302,6 +298,12 @@ export default {
       [105 * p, 1755 * p, 200 * p, 2 * p],
       [255 * p, 1785 * p, 90 * p, 2 * p]
     ]
+    const trapezoid = [
+      [320 * p, 538 * p, 10 * p, 16 * p, 3],
+      [365 * p, 538 * p, -10 * p, 16 * p, 3],
+      [195 * p, 738 * p, -13 * p, 40 * p, 3],
+      [128 * p, 738 * p, 13 * p, 40 * p, 3]
+    ]
     // 所有的墙
     const allArr = boundaryArr.concat(dreamStart, invertedPipe, Pipe, secondPageHorizontalPipe, secondPagePipe, thirdPageHorizontalPipe, thirdPagePipe, lastHorizontalPipe)
     const reverseArr = allArr.map((item) => {
@@ -315,7 +317,18 @@ export default {
         })
       )
     })
-    World.add(engine.world, [...reverseArr])
+    const reverseArrTrapezoid = trapezoid.map((item) => {
+      return (
+        Bodies.trapezoid(...item, {
+          isStatic: true,
+          render: {
+            fillStyle: 'rgba(255, 255, 255, 0)',
+            strokeStyle: 'rgba(255, 255, 255, 0)'
+          }
+        })
+      )
+    })
+    World.add(engine.world, [...reverseArr, ...reverseArrTrapezoid])
     // 生成正方体
     // const stack = Composites.stack(0, 0, 1, 1, 0, 0, function () {
     //   return Bodies.rectangle(
