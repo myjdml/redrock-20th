@@ -85,7 +85,7 @@ export default {
       // console.log(this.$store.state.image[0])
       postWorkedInfo('/redrocker/create', this.formData).then((response) => {
         console.log('回复', response)
-        if (response.code === 10000) {
+        if (response.data.code === 10000) {
           this.$emit('sign-up-success')
         } else {
           this.$emit('fail')

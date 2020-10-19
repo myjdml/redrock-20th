@@ -50,7 +50,7 @@ export default {
       console.log(this.formValue)
       postWorkLessInfo('/student/create', this.formValue).then((response) => {
         console.log('回复', response)
-        if (response.code === 10000) {
+        if (response.data.code === 10000) {
           this.$emit('sign-up-success')
         } else {
           this.$emit('fail')
