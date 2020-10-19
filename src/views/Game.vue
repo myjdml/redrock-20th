@@ -30,6 +30,7 @@
         @change-award-state="changeAwardState"
         @sign-up-success="signUpSuccess"
         @fail="fail"
+        @sign-up-repeat="signUpRepeat"
       ></Award>
       <ConfirmInfo v-if="confirmInfo.state" :Info="confirmInfo.msg"></ConfirmInfo>
       <div class="back-to-2020" @click="backTo2020"></div>
@@ -114,6 +115,14 @@ export default {
     },
     fail () {
       this.awardState = false
+    },
+    signUpRepeat () {
+      this.awardState = false
+      this.confirmInfo.msg = this.confirmInfo.info.repeat
+      this.confirmInfo.state = true
+      setTimeout(() => {
+        this.confirmInfo.state = false
+      }, 2000)
     },
     getGrant () {
       if (this.is_ios()) {

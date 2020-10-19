@@ -52,11 +52,12 @@ export default {
         console.log('回复', response)
         if (response.data.code === 10000) {
           this.$emit('sign-up-success')
+        } if (typeof response.data.error === 'string') {
+          this.$emit('sign-up-repeat')
         } else {
           this.$emit('fail')
         }
       })
-      console.log(this.$refs.confirm.style.backgroundImage = 'url("../../assets/img/components/award/confirm.png")')
     }
   },
   components: {
