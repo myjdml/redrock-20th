@@ -578,7 +578,7 @@ export default {
         {
           friction: 0,
           restitution: 0.2,
-          frictionAir: 0.1
+          frictionAir: 0.15
           // render: {
           //   sprite: {
           //     texture: that.img.src,
