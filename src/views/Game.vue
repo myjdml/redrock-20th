@@ -523,10 +523,10 @@ export default {
   }
   .bac3-icon1 {
     position: absolute;
-    top: 3244px;
-    left: 185px;
-    width: 114px;
-    height: 119px;
+    top: 3250px;
+    left: 188px;
+    width: 266px;
+    height: 118px;
     background-image: url("../assets/img/game/bac3-icon1.png");
     background-size: 100%;
     z-index: 3;
