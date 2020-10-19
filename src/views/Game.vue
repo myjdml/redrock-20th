@@ -23,7 +23,7 @@
       <div>
         <div class="bac3-icon1"></div>
       </div>
-      <TextShow class="font"></TextShow>
+      <TextShow class="font" v-if="fontState"></TextShow>
       <button @click="awardStart"></button>
       <Award
         v-if="awardState"
@@ -103,6 +103,44 @@ export default {
       // console.log(o.onOrient)
       o.on()
       this.orienter = o
+    },
+    getDevicePixelRatio () {
+      /* eslint-disable  camelcase */
+      /* eslint-disable  prefer-const */
+      /* eslint-disable  no-multi-str */
+      let mediaQuery
+      let is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+
+      if (window.devicePixelRatio !== undefined && !is_firefox) {
+        return window.devicePixelRatio
+      } else if (window.matchMedia) {
+        mediaQuery =
+          '(-webkit-min-device-pixel-ratio: 1.5),\
+          (min--moz-device-pixel-ratio: 1.5),\
+          (-o-min-device-pixel-ratio: 3/2),\
+          (min-resolution: 1.5dppx)'
+        if (window.matchMedia(mediaQuery).matches) {
+          return 1.5
+        }
+        mediaQuery =
+          '(-webkit-min-device-pixel-ratio: 2),\
+          (min--moz-device-pixel-ratio: 2),\
+          (-o-min-device-pixel-ratio: 2/1),\
+          (min-resolution: 2dppx)'
+        if (window.matchMedia(mediaQuery).matches) {
+          return 2
+        }
+        mediaQuery =
+          '(-webkit-min-device-pixel-ratio: 0.75),\
+          (min--moz-device-pixel-ratio: 0.75),\
+          (-o-min-device-pixel-ratio: 3/4),\
+          (min-resolution: 0.75dppx)'
+        if (window.matchMedia(mediaQuery).matches) {
+          return 0.7
+        }
+      } else {
+        return 1
+      }
     },
     // 反馈状态
     signUpSuccess () {
@@ -578,12 +616,12 @@ export default {
         {
           friction: 0,
           restitution: 0.2,
-          frictionAir: 0.15
-          // render: {
-          //   sprite: {
-          //     texture: that.img.src,
-          //   },
-          // },
+          frictionAir: 0.15,
+          render: {
+            sprite: {
+              texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
+            }
+          }
         }
       )
     })
@@ -604,7 +642,6 @@ export default {
     // 让屏幕自己滚
     const target = circle.bodies[0].position
     const main = document.querySelector('#main')
-    main.scrollTop = 0 // 初始化
     setInterval(() => {
       if (target.y > 250) {
         main.scrollTop = target.y - 250
