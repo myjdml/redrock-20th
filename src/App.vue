@@ -8,7 +8,7 @@
 
     <router-view v-slot="{ Component }">
       <transition ref="target">
-        <keep-alive>
+        <keep-alive exclude="['Game']">
           <component :is="Component" />
         </keep-alive>
       </transition>

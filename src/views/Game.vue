@@ -614,9 +614,9 @@ export default {
         100,
         8 * p,
         {
-          friction: 0.5,
+          friction: 0.2,
           restitution: 0.2,
-          frictionAir: 0.15,
+          frictionAir: 0.1,
           render: {
             sprite: {
               texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
