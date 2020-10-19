@@ -23,7 +23,7 @@
       <div>
         <div class="bac3-icon1"></div>
       </div>
-      <TextShow class="font" v-if="fontState"></TextShow>
+      <TextShow class="font"></TextShow>
       <button @click="awardStart"></button>
       <Award
         v-if="awardState"
