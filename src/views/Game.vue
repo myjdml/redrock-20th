@@ -186,7 +186,7 @@ export default {
       }
     }
   },
-  mounted () {
+  created () {
     // 过渡动画
     this.$emit('change-page')
     // 上流的物理引擎

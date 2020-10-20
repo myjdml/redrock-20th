@@ -6,7 +6,13 @@
       <img src="./assets/img/icon/redrock-icon.png" alt="redrock-icon">
     </div>
 
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <transition ref="target">
+        <keep-alive :exclude="['Game']">
+          <component :is="Component" />
+        </keep-alive>
+      </transition>
+    </router-view>
 
     <Player></Player>
   </div>
