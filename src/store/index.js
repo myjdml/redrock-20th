@@ -9,7 +9,7 @@ export default createStore({
     image: [],
     imageId: [],
     isUploading: false,
-    routerState: false
+    gameState: false
   },
   mutations: {
     [SET_IMAGE_UPLOADING] (state) {
