@@ -348,6 +348,7 @@ export default {
     //     }
     //   )
     // })
+
     const circle = Composites.stack(0, 0, 1, 1, 0, 0, function () {
       return Bodies.circle(
         375 / 2,
