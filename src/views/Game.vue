@@ -187,6 +187,7 @@ export default {
     }
   },
   mounted () {
+    this.$router.go(0)
     // 过渡动画
     this.$emit('change-page')
     // 上流的物理引擎
