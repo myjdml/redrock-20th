@@ -85,7 +85,7 @@ export default {
       this.awardState = false
     },
     backTo2020 () {
-      this.$router.push('/home')
+      this.$router.go(0)
     },
     shareImg () {
       this.$router.push('/qr-code')
@@ -382,8 +382,6 @@ export default {
     // })
     // 让屏幕自己滚
     const target = circle.bodies[0].position
-    target.x = 195
-    target.y = 108
     console.log(target)
     const main = document.querySelector('#main')
     setInterval(() => {
