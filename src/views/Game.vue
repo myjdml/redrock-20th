@@ -382,6 +382,9 @@ export default {
     // })
     // 让屏幕自己滚
     const target = circle.bodies[0].position
+    target.x = 195
+    target.y = 108
+    console.log(target)
     const main = document.querySelector('#main')
     setInterval(() => {
       if (target.y > 250) {
