@@ -12,7 +12,7 @@
 
 <script>
 /* eslint-disable no-alert */
-const musicUrl = 'http://cdn.redrock.team/hello-student_music1.mp3'
+const musicUrl = 'http://cdn.redrock.team/redrock-20th-anniversary_6f3e29a35278d71c7f65495871231324.mp3'
 // const musicUrl = 'https://wsaudiobssdlbig.kugou.com/2008300845/msIXVYF_b1ichu77GdtAuA/1598834724/bss/extname/wsaudio/82459c85bd90ba1e582bbe54259611a4.mp3';
 export default {
   name: 'Player',

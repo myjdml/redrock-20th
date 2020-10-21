@@ -86,7 +86,7 @@ export default {
     },
     backTo2020 () {
       console.log('点击时间没问题')
-      this.$router.go(0)
+      location.reload()
     },
     shareImg () {
       this.$router.push('/qr-code')
