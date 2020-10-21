@@ -85,6 +85,7 @@ export default {
       this.awardState = false
     },
     backTo2020 () {
+      console.log('点击时间没问题')
       this.$router.go(0)
     },
     shareImg () {
@@ -558,6 +559,7 @@ export default {
     height: 96px;
     background-image: url("../assets/img/game/back-to-2020.png");
     background-size: 100%;
+    z-index: 5;
   }
   .share {
     position: absolute;
@@ -567,5 +569,6 @@ export default {
     height: 96px;
     background-image: url("../assets/img/game/share.png");
     background-size: 100%;
+    z-index: 5;
   }
 </style>
