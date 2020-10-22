@@ -264,7 +264,7 @@ export default {
     // 第二页管子
     const secondPagePipe = [
       [145 * p, 768 * p, 10 * p, 35 * p],
-      [180 * p, 782 * p, 5 * p, 60 * p],
+      [177 * p, 782 * p, 5 * p, 60 * p],
       [160 * p, 812 * p, 40 * p, 2 * p],
       [18 * p, 892 * p, 50 * p, 2 * p],
       [103 * p, 892 * p, 60 * p, 2 * p],
@@ -294,11 +294,13 @@ export default {
       [95 * p, 1655 * p, 2 * p, 50 * p],
       [125 * p, 1667 * p, 2 * p, 30 * p]
     ]
+    // 最后的平台
     const lastHorizontalPipe = [
       [215 * p, 1770 * p, 2 * p, 30 * p],
       [105 * p, 1755 * p, 200 * p, 2 * p],
       [255 * p, 1785 * p, 90 * p, 2 * p]
     ]
+    // 所有的梯形
     const trapezoid = [
       [320 * p, 538 * p, 10 * p, 16 * p, 3],
       [365 * p, 538 * p, -10 * p, 16 * p, 3],
@@ -358,16 +360,18 @@ export default {
         {
           friction: 0.1,
           restitution: 0.2,
-          frictionAir: 0.1
-          // render: {
-          //   sprite: {
-          //     texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
-          //   }
-          // }
+          frictionAir: 0.1,
+          render: {
+            fillStyle: '#FDFC8D',
+            strokeStyle: '#FDFC8D'
+            // sprite: {
+            //   texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
+            // }
+          }
         }
       )
     })
-    console.log(circle.bodies[0].position)
+    console.log(circle)
     World.add(world, [circle])
 
     // this.getGrant()
