@@ -356,14 +356,14 @@ export default {
       return Bodies.circle(
         375 / 2,
         100,
-        8 * p,
+        9 * p,
         {
           friction: 0.1,
           restitution: 0.2,
           frictionAir: 0.1,
           render: {
-            fillStyle: '#FDFC8D',
-            strokeStyle: '#FDFC8D'
+            fillStyle: '#F7F787',
+            strokeStyle: '#F7F787'
             // sprite: {
             //   texture: 'http://cdn.redrock.team/redrock-20th_ball_20px.png'
             // }
