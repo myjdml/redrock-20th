@@ -1,8 +1,10 @@
 <template>
   <div id="first-pick" class="flex-cul">
-    <div class="pick" @click="showWorked">我曾在网校工作过</div>
-    <div style="height: 38px"></div>
-    <div class="pick" @click="showWorkLess">我正在/未曾在网校工作过</div>
+    <div class="pick" @click="showWorkLess">我未在网校工作过</div>
+    <div style="height: 25px"></div>
+    <div class="pick" @click="showWorked">我正在网校工作</div>
+    <div style="height: 25px"></div>
+    <div class="pick" @click="showWorked">我曾经当过网校干事</div>
   </div>
 </template>
 
