@@ -6,6 +6,7 @@
     ></MyInput>
     <MyInput :my-name="'学号'"
              :placeholder="'2019***211'"
+             :check_msg="'(请输入正确学号)'"
              @get-input-value="getStuNum"
     ></MyInput>
     <MyInput :my-name="'电话'"

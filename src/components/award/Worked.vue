@@ -10,8 +10,8 @@
              :check_msg="'(请输入正确电话)'"
              @get-input-value="getPhoneNum"
     ></MyInput>
-    <MyInput :my-name="'届数'"
-             :placeholder="'18'"
+    <MyInput :my-name="'职位'"
+             :placeholder="'18级Web研发部'"
              @get-input-value="gradeAndPosition"
     ></MyInput>
     <MyInput :my-name="'邮寄地址'"

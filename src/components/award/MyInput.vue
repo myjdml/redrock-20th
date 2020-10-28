@@ -8,6 +8,7 @@
 
 <script>
 import phoneText from '../../utils/phoneText'
+import schoolNumText from '../../utils/schoolNumText'
 
 export default {
   name: 'MyInput',
@@ -29,6 +30,13 @@ export default {
       } else {
         this.alert_msg = ''
       }
+    },
+    handleSchoolNum (schoolNum) {
+      if (this.$props.check_msg && !schoolNumText(schoolNum)) {
+        this.alert_msg = this.$props.check_msg
+      } else {
+        this.alert_msg = ''
+      }
     }
   },
   mounted () {
@@ -43,7 +51,11 @@ export default {
       }
       // console.log(this.alert_msg)
       // 验证电话号码是否正确
-      this.handlePhoneNum(this.value)
+      if (this.alert_msg === '(请输入正确电话)') {
+        this.handlePhoneNum(this.value)
+      } else if (this.alert_msg === '(请输入正确学号)') {
+        this.handleSchoolNum(this.value)
+      }
     })
   }
 }
