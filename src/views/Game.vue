@@ -68,7 +68,8 @@ export default {
         msg: '',
         info: {
           success: '参与抽奖成功',
-          repeat: '请勿重复报名哦'
+          repeat: '请勿重复报名哦',
+          fail: '请输入正确信息'
         }
       }
     })
@@ -154,6 +155,11 @@ export default {
     },
     fail () {
       this.awardState = false
+      this.confirmInfo.msg = this.confirmInfo.info.fail
+      this.confirmInfo.state = true
+      setTimeout(() => {
+        this.confirmInfo.state = false
+      }, 2000)
     },
     signUpRepeat () {
       this.awardState = false
