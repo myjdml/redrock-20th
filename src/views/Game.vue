@@ -404,7 +404,7 @@ export default {
       if (target.y > 1880) {
         this.fontState = true
       }
-    })
+    }, 100)
   }
 }
 </script>

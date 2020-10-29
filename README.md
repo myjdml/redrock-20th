@@ -4,96 +4,71 @@
 
 为了方便只展示 src 目录下的文件。图片文件夹只展示具体文件夹，不展示具体文件。
 
-```$xslt
+```
 .
-├── App.vue
-├── assets
-│   ├── font
-│   │   ├── MFTONGXIN_NONCOMMERCIAL-REGULAR.TTF
-│   │   └── MFXINGYAN_NONCOMMERCIAL-REGULAR.TTF
-│   ├── img
-│   │   ├── basic-info
-│   │   ├── canteen
-│   │   ├── canteen-lead
-│   │   ├── college-brief
-│   │   ├── component
-│   │   │   ├── cloud
-│   │   │   └── viewpager
-│   │   ├── dorm
-│   │   ├── dorm-lead
-│   │   ├── dormitory
-│   │   ├── fourth-page
-│   │   ├── hobby
-│   │   ├── home
-│   │   ├── icons
-│   │   ├── loading
-│   │   ├── long-page
-│   │   └── second-page
-│   ├── message
-│   │   ├── canteen.json
-│   │   └── data.txt
-│   └── styles
-│       ├── animation.css
-│       ├── animation.css.map
-│       ├── animation.less
-│       ├── font.css
-│       ├── mixins.css
-│       ├── mixins.css.map
-│       ├── mixins.less
-│       ├── variables.css
-│       ├── variables.css.map
-│       └── variables.less
-├── components
-│   ├── Animate.vue
-│   ├── ButtonBox.vue
-│   ├── Cloud.vue
-│   ├── Picker.vue
-│   ├── Player.vue
-│   ├── Swiper.vue
-│   ├── Upglide.vue
-│   ├── ViewPager.vue
-│   ├── basic-info
-│   │   ├── Content.vue
-│   │   └── Title.vue
-│   ├── canteen-lead
-│   │   ├── CanteenContainer.vue
-│   │   └── Title.vue
-│   ├── college-brief
-│   │   ├── CollegeContent.vue
-│   │   └── Title.vue
-│   ├── dorm
-│   │   ├── Container.vue
-│   │   └── Title.vue
-│   ├── dorm-lead
-│   │   ├── DormContainer.vue
-│   │   └── Title.vue
-│   └── hobby
-│       └── Title.vue
-├── main.js
-├── router
-│   └── index.js
-├── server
-│   └── index.js
-├── utils
-│   ├── countDown.js
-│   ├── data.js
-│   ├── loading.js
-│   ├── slideChange.js
-│   ├── throttle.js
-│   └── util.js
-└── views
-    ├── BasicInfo.vue
-    ├── Canteen.vue
-    ├── CanteenLead.vue
-    ├── CollegeBrief.vue
-    ├── Dorm.vue
-    ├── DormLead.vue
-    ├── FirstPage.vue
-    ├── FourthPage.vue
-    ├── Hobby.vue
-    ├── Loading.vue
-    ├── LongPage.vue
-    └── SecondPage.vue
+├── public
+│   └── index.html
+├── src
+│   ├── App.vue
+│   ├── assets
+│   │   ├── font
+│   │   │   └── MFJIANHEI_NONCOMMERCIAL-REGULAR.TTF
+│   │   ├── img
+│   │   │   ├── components
+│   │   │   │   ├── awar
+│   │   │   │   └── game
+│   │   │   │       └── confirm-info
+│   │   │   ├── edit-img
+│   │   │   ├── game
+│   │   │   ├── home
+│   │   │   ├── icon
+│   │   │   ├── loading
+│   │   │   └── qr-code
+│   │   ├── logo.png
+│   │   ├── style
+│   │   └── svg
+│   ├── components
+│   │   ├── Award.vue
+│   │   ├── Player.vue
+│   │   ├── Text.vue
+│   │   ├── award
+│   │   │   ├── ConfirmInfo.vue
+│   │   │   ├── FirstPick.vue
+│   │   │   ├── MyInput.vue
+│   │   │   ├── WorkLess.vue
+│   │   │   └── Worked.vue
+│   │   └── game
+│   │       ├── EditImage.vue
+│   │       └── TextShow.vue
+│   ├── main.js
+│   ├── router
+│   │   └── index.js
+│   ├── server
+│   │   ├── api.js
+│   │   └── index.js
+│   ├── store
+│   │   ├── index.js
+│   │   └── type
+│   │       ├── actions.js
+│   │       └── mutations.js
+│   ├── utils
+│   │   ├── loading.js
+│   │   ├── orienter.js
+│   │   ├── phoneText.js
+│   │   ├── schoolNumText.js
+│   │   ├── slideChange.js
+│   │   └── throttle.js
+│   └── views
+│       ├── Game.vue
+│       ├── Home.vue
+│       ├── Loading.vue
+│       └── QRCode.vue
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── vue.config.js
+└── yarn.lock
+
 ```
 
 ## 技术栈
@@ -101,7 +76,7 @@
 + vue
 + vue-router
 + axios
-+ swiper
++ matter.js
 
 ## 项目运行
 
@@ -112,7 +87,7 @@
 1. 在Vue中，如果想要刷新当前页面，不建议使用`this.$router.go(0)`，建议使用`location.load()`。这个方法在本项目中ios端会失效。但是在PC端和安卓是可以触发的。
 
 2. 物理引擎使用的是`matter.js`, 获取手机重力使用的是github上的一个封装库--[oritnter.js](https://github.com/shrekshrek/orienter)
-  + 首先，`matter.js`的官方文档，建议重构
+  + 首先，`matter.js`的官方文档，有点拉胯
   + 其次，`oritnter.js`这个库里所使用的方法有一些是需要在https协议下才能生效，这点特别坑！
 
 3. 
