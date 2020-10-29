@@ -53,8 +53,10 @@ export default {
         console.log('回复', response)
         if (response.data.code === 10000) {
           this.$emit('sign-up-success')
-        } if (response.data.error === 'student record exists') {
+        } else if (response.data.error === 'student record exists') {
           this.$emit('sign-up-repeat')
+        } else if (response.data.code === 20000) {
+          this.$emit('fail')
         }
       })
     }
