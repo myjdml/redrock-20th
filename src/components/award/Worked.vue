@@ -81,6 +81,10 @@ export default {
       this.formData.append('phone', this.formValue.phone)
       this.formData.append('gradeAndPosition', this.formValue.gradeAndPosition)
       this.formData.append('address', this.formValue.address)
+      setTimeout(() => {
+        this.$store.state.image = []
+        this.$store.state.imageId = []
+      }, 2000)
       // console.log(this.formValue)
       // console.log(this.$store.state.image[0])
       postWorkedInfo('/redrocker/create', this.formData).then((response) => {
