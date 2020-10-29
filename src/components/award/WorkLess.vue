@@ -55,8 +55,6 @@ export default {
           this.$emit('sign-up-success')
         } if (response.data.error === 'student record exists') {
           this.$emit('sign-up-repeat')
-        } else {
-          this.$emit('fail')
         }
       })
     }

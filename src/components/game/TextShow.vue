@@ -1,6 +1,6 @@
 <template>
   <div id="text-show">
-    <p class="ani-1">2020年-红岩网校成立</p>
+    <p class="ani-1">2000年-红岩网校成立</p>
     <p class="ani-2">2001年-重庆思想工作创新奖</p>
     <p class="ani-3">2006年-十佳全国高校实践网站</p>
     <p class="ani-4">2007年-十佳思政类网站</p>
