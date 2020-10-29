@@ -257,8 +257,8 @@ export default {
     const Pipe = [
       [330 * p, 558 * p, 2, 27 * p],
       [355 * p, 570 * p, 2, 50 * p],
-      [178 * p, 575 * p, 300 * p, 2],
-      [188 * p, 595 * p, 330 * p, 2]
+      [178 * p, 570 * p, 300 * p, 2],
+      [191 * p, 597 * p, 325 * p, 2]
     ]
     // 第二页直板子
     const secondPageHorizontalPipe = [
@@ -320,8 +320,8 @@ export default {
         Bodies.rectangle(...item, {
           isStatic: true,
           render: {
-            fillStyle: 'rgba(255, 255, 255, 0)',
-            strokeStyle: 'rgba(255, 255, 255, 0)'
+            fillStyle: 'rgba(255, 255, 255, 1)',
+            strokeStyle: 'rgba(255, 255, 255, 1)'
           }
         })
       )
@@ -362,9 +362,9 @@ export default {
       return Bodies.circle(
         375 / 2,
         100,
-        9 * p,
+        10 * p,
         {
-          friction: 0.1,
+          friction: 0.04,
           restitution: 0.2,
           frictionAir: 0.1,
           render: {
@@ -467,9 +467,10 @@ export default {
   }
   .bac1-icon2 {
     position: absolute;
-    top: 1076px;
-    width: 747px;
-    height: 136px;
+    left: 36px;
+    top: 1084px;
+    width: 703px;
+    height: 128px;
     background-image: url("../assets/img/game/bac1-icon2.png");
     background-size: 100%;
     z-index: 3;
