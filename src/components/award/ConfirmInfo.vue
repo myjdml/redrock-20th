@@ -21,7 +21,7 @@ export default {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, .34);
-    z-index: 3;
+    z-index: 7;
   }
   .flex-cul {
     display: flex;
