@@ -100,7 +100,12 @@ export default {
         const GX = Math.abs(obj.g) < 10 ? 0 : obj.g
         // console.log('GX' + -tofix(GX) + 'GY' + tofix(GY))
         e.x = tofix(GX)
-        e.y = tofix(GY) < 0 ? tofix(GY) * 0.1 : tofix(GY)
+        // 小球往回走的时候重力变小
+        if (tofix(GY) < 30) {
+          e.y = tofix(GY) < 0 ? tofix(GY) * 0.1 : tofix(GY)
+        } else {
+          e.y = tofix(GY) < 0 ? tofix(GY) * 0.4 : tofix(GY)
+        }
       }
       // console.log(o.onOrient)
       o.on()
