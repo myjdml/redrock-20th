@@ -337,30 +337,12 @@ export default {
       )
     })
     World.add(engine.world, [...reverseArr, ...reverseArrTrapezoid])
-    // 生成正方体
-    // const stack = Composites.stack(0, 0, 1, 1, 0, 0, function () {
-    //   return Bodies.rectangle(
-    //     0,
-    //     0,
-    //     200,
-    //     200,
-    //     {
-    //       friction: 0.1,
-    //       restitution: 0.2,
-    //       frictionAir: 0.15
-    //       // render: {
-    //       //   sprite: {
-    //       //     texture: that.img.src,
-    //       //   },
-    //       // },
-    //     }
-    //   )
-    // })
 
+    // 生成小球
     const circle = Composites.stack(0, 0, 1, 1, 0, 0, function () {
       return Bodies.circle(
-        375 / 2,
-        100,
+        375 * p / 2,
+        100 * p,
         10 * p,
         {
           friction: 0.04,
@@ -376,7 +358,7 @@ export default {
         }
       )
     })
-    console.log(circle)
+    // console.log(Bodies.circle)
     World.add(world, [circle])
 
     // this.getGrant()
@@ -496,10 +478,10 @@ export default {
   }
   .bac1-icon2-cover {
     position: absolute;
-    left: 53px;
-    top: 1147px;
-    width: 15px;
-    height: 45px;
+    left: 55px;
+    top: 1140px;
+    width: 16px;
+    height: 55px;
     background-image: url("../assets/img/game/bac1-icon2-cover.png");
     background-size: 100%;
     z-index: 1;
