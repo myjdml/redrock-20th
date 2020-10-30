@@ -33,7 +33,7 @@
         @sign-up-repeat="signUpRepeat"
       ></Award>
       <ConfirmInfo v-if="confirmInfo.state" :Info="confirmInfo.msg"></ConfirmInfo>
-      <div class="back-to-2020" @click="backTo2020"></div>
+      <div class="back-to-2000" @click="backTo2000"></div>
       <div class="share" @click="shareImg"></div>
 
       <div id="cover"></div>
@@ -85,7 +85,7 @@ export default {
     changeAwardState () {
       this.awardState = false
     },
-    backTo2020 () {
+    backTo2000 () {
       console.log('点击时间没问题')
       location.reload()
     },
@@ -154,7 +154,6 @@ export default {
       }, 2000)
     },
     fail () {
-      this.awardState = false
       this.confirmInfo.msg = this.confirmInfo.info.fail
       this.confirmInfo.state = true
       setTimeout(() => {
@@ -562,13 +561,13 @@ export default {
     outline: none;
     border: none;
   }
-  .back-to-2020 {
+  .back-to-2000 {
     position: absolute;
     left: 28px;
     bottom: 30px;
     width: 331px;
     height: 96px;
-    background-image: url("../assets/img/game/back-to-2020.png");
+    background-image: url("../assets/img/game/back-to-2000.png");
     background-size: 100%;
     z-index: 5;
   }
