@@ -98,9 +98,9 @@ export default {
         const tofix = num => (num ? Math.abs(num) / num : 0)
         const GY = Math.abs(obj.b) < 10 || Math.abs(obj.b) > 170 ? 0 : obj.b
         const GX = Math.abs(obj.g) < 10 ? 0 : obj.g
-        console.log('GX' + -tofix(GX) + 'GY' + tofix(GY) + 'obj.b' + tofix(obj.b))
+        // console.log('GX' + -tofix(GX) + 'GY' + tofix(GY) + 'obj.b' + tofix(obj.b))
         e.x = tofix(GX)
-        e.y = tofix(GY) < 0 ? tofix(GY) * 0.1 : tofix(GY)
+        e.y = tofix(GY) < 0 ? tofix(GY) * 0.3 : tofix(GY)
       }
       // console.log(o.onOrient)
       o.on()
