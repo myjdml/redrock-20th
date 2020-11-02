@@ -295,8 +295,8 @@ export default {
     // 第三页的管子
     const thirdPagePipe = [
       [250 * p, 1652 * p, 250 * p, 2 * p],
-      [120 * p, 1630 * p, 50 * p, 2 * p],
-      [100 * p, 1655 * p, 2 * p, 50 * p],
+      [120 * p, 1625 * p, 50 * p, 2 * p],
+      [105 * p, 1655 * p, 2 * p, 50 * p],
       [125 * p, 1667 * p, 2 * p, 30 * p]
     ]
     // 最后的平台
@@ -319,8 +319,8 @@ export default {
         Bodies.rectangle(...item, {
           isStatic: true,
           render: {
-            fillStyle: 'rgba(255, 255, 255, 0)',
-            strokeStyle: 'rgba(255, 255, 255, 0)'
+            fillStyle: 'rgba(255, 255, 255, 1)',
+            strokeStyle: 'rgba(255, 255, 255, 1)'
           }
         })
       )

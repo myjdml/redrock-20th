@@ -319,8 +319,8 @@ export default {
         Bodies.rectangle(...item, {
           isStatic: true,
           render: {
-            fillStyle: 'rgba(255, 255, 255, 0)',
-            strokeStyle: 'rgba(255, 255, 255, 0)'
+            fillStyle: 'rgba(255, 255, 255, 1)',
+            strokeStyle: 'rgba(255, 255, 255, 1)'
           }
         })
       )
