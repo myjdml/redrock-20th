@@ -1,7 +1,7 @@
 /*
  * @Author: Code_Master
  * @Date: 2020-10-02 15:21:05
- * @LastEditTime: 2020-11-01 15:00:26
+ * @LastEditTime: 2020-11-01 15:00:25
  * @LastEditors: Code_Master
  * @FilePath: /redrock-20th/src/store/index.js
  * @Description: The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.

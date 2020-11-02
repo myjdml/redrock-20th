@@ -345,9 +345,9 @@ export default {
         100 * p,
         10 * p,
         {
-          // friction: 0.04,
+          friction: 0.04,
           restitution: 0.2,
-          frictionAir: 0.15,
+          frictionAir: 0.1,
           render: {
             fillStyle: '#F7F787',
             strokeStyle: '#F7F787'
